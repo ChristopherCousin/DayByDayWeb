@@ -38,7 +38,7 @@ p
 #showcase {
 	padding: 2rem;
 	min-height: 300px;
-	background:url('pro.jpg') no-repeat 0 -500px;
+	background:url("Resources/inicio.jpg") no-repeat 0 -500px;
 	text-align: center;
 	color:#ffffff;
 }
@@ -118,7 +118,7 @@ img {
 	border-radius: 50%;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1020px) {
 
 	.menu-icon {
 		display: block;
