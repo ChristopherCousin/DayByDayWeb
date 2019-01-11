@@ -1,59 +1,98 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<title>Day By Day</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="Day By Day, administrar, time, administrar tiempo, administrador de tiempo, control el tiempo, procrastinar">
+    <meta name="author" content="The Lord Gay Christopher">
+    <meta name="description" content="Day By Day | Una nueva forma de administrar tu tiempo">
+    <meta name="generator" content="Atom">
+    <meta name="viewport" content="width=device-width,
+                  initial-scale=1,
+                  maximum-scale=1">
+    <title>Day By Day</title>
+    <link rel="icon" href="fav_icon.png">
+    <link rel="stylesheet" href="css/reset.css"> <!-- Resetear todos los parametros de CSS para cargar los nuestros desde el inicio -->
+    <link rel="stylesheet" href="css/estilo.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/funcionesGenerales.js" ></script> <!-- GENERAL SCRIPTS -->
+    <script type="text/javascript" src="js/resizeText.js" ></script> <!-- FOR RESPONSIVE DESIGN -->
 
-<link href="style.css" rel="stylesheet">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-	<header class="header">
-		<div class="container logo-nav-container">
-			<a href="#" class="logo">LOGO</a>
-			<span class="menu-icon" id="menu">Mostrar Menu</span>
-			<nav class="navigation">
-				<ul>
-				<li><a href="index.html">Inicio</a></li>
-				<li><a href="descarga.html">Descargar</a></li>
-				<li><a href="#">Artificial Intelligence</a></li>
-				<li><a href="#">Acerca de</a></li>
-				<li><a href="#">FAQ</a></li>
-				</ul>
-			</nav>
-		</div>
-	</header>
 
-	<section id="showcase">
-		<div class="container">
-			<h1>Time</h1>
-			<p>Controla tu tiempo, controla tu vida!</p>
-		</div>
-	</section>
+<div class="pag1"> <!-- fit web height and width -->
+    <div id="divHeader"> <!-- Div del menu principal -->
+        <header id="main-header">
+              <a href="/" title="Vuelve a la página de inicio" id="logo">
+                <img src="images/logo.png" alt="Day By Day logo" />
+              </a><!-- Logo completo: PNG // background-color: #ececec; border right solid 1px #bdb7aa; -->
+        </header>
+        <!-- Por defecto el head se va a dividir en  7 casillas: 100% / 7, El header ocupará la primera-->
+        <nav id="main-menu">
 
-	<section id="bordeshowcase">
-		<div class="container">
-		</div>
-	</section>
+            <ul><!-- background-color: #d3cec1; border left dashed #bdb7aa; OMITIR 1º BORDER LI-->
+                <!-- AGRUPAMOS LI EN UNA SOLA FILA PARA QUE INLINE-BLOCK NO CREE ESPACIOS -->
+                <li>
+                  <a class="active" href="#inicio">Inicio</a>
+                </li>
+                <li>
+                  <a href="#descargar">Descargar</a>
+                </li>
+                <li>
+                  <a href="#acercade">Acerca de</a>
+                </li>
+                <li>
+                  <a href="#FAQ">FAQ</a>
+                </li>
+                <li>
+                  <a href="#contact">Contacto</a>
+                </li>
+                <li>
+                  <a href="#inicio" id="header__icon" class="header__icon">&#9776;</a> <!-- COLLAPSE MENU -->
+                </li>
+            </ul>
 
+        </nav>
+    </div>    <!-- border bottom solid 1px #222121 -->
+    <div id="intro"> <!-- Div de la imagen principal -->
+      <!-- <div id="flecha-abajo"><i class="down"></i></div> -->
+      <div id="intro-text">
+        <h3>Una nueva forma de administrar tu tiempo</h3>
+        <h1>Day By Day</h1>
+      </div>
+    <aside id="network">
+        <ul>
+          <li><img src="images/network/whatsapp.png"></li>
+          <li><img src="images/network/facebook.png"></li>
+          <li><img src="images/network/twitter.png"></li>
+        </ul>
+      </aside>
+    </div>
+<!-- -->
 
-	<main class="main">
-		<div class="container">
-			<h2>01. Pinch/Zoom</h2>
-			<img src="Resources/PinchZoom.jpg" alt="PinchZoom">
-			<p>Pinch/Zoom es una empresa de diseño web dirigida por el renombrado experto en móviles Brian Fling, y tiene una excepcional página web que rinde junto con el eje x, el camino menos trillado de la web, en presentaciones anchas. El diseño hace uso de columnas CSS, que puede ser difícil de controlar en páginas web responsive, la presencia de barras de desplazamiento horizontal; sin embargo, prevalece la forma de mover los dedos como pinza y hacer acercamientos, y la elegancia aborda el problema con algunos diseños verticales responsive.
+    <div class="texto-bienvenida">
+          <article class="bienvenida">
+                    <h1>
+                        Bienvenido
+                    </h1>
+                    <p>
+                        Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
+                    </p>
+                </p>
+            </article>
+            <article class="quienes-somos">
+                      <h1>
+                          Quienes somos?
+                      </h1>
+                      <p>
+                          Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
+                      </p>
+                  </p>
+              </article>
+    </div>
+</div>
 
-			El contenido tiene espacio, mientras que la navegación, que funciona sin mayor esfuerzo en puertos de vista pequeños y grandes, soporta la forma y es desencadenado cuando se hace clic en el logo de la agencia. En pantallas reducidas, la dinámica cambia para atravesar un eje más Y. Claramente, es una decisión considerada: en el puerto de vista ancho, acomoda, sin interrupciones, diversas columnas y el diseño horizontal, pero los puertos de vista pequeños, no le permite manejar varias columnas y ofrece una experiencia lectora inconexa.
+</div>
 
-			Con frecuencia, verás que páginas web que toman este enfoque están abiertas a la experimentación, pero pueden batallar con nuestros hábitos aún no formados. Pinch/Zoom logra superar el desafío y producir algo que se siente sólido e intuitivo contra todo pronóstico.</p>
-		</div>
-	</main>
-	<footer class="footer">
-		<div class="container">
-			<p>By: Christopher Cousin</p>
-		</div>
-	</footer>
-
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="scripts.js"></script>
 </body>
 </html>
