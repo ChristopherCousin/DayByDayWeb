@@ -19,11 +19,22 @@ var Dimensiones=function(){
     var hWelcome = h / 2;
     var wWelcome = w / 2;
 
+    var wPhone = w / 2;
+  var hPhone = h / 2;
     $("#intro").css({ // ESTABLECER NUEVAS DIMENSIONES
       'width':w + 'px',
       'height':hWelcome + 'px',
     });
 
+    $("#download").css({ // ESTABLECER NUEVAS DIMENSIONES
+      'width':w + 'px',
+      'height':hWelcome + 'px',
+    });
+
+    $("#acercade").css({ // ESTABLECER NUEVAS DIMENSIONES
+      'width':w + 'px',
+      'height':h + 'px',
+    });
 };
 
 $(document).ready(function() {
