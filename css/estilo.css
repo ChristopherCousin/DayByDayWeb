@@ -13,6 +13,10 @@ body{
 }
 
 
+.pag3 {
+  background-color: #fff;
+}
+
 #divHeader { /* CONTIENE EL LOGO Y MENU PRINCIPAL - main-header & main-menu */
   display:table; /* CREAMOS UNA TABLA */
   width: 100%;
@@ -89,40 +93,19 @@ background-color: #ececec;
 
 }
 
-#download  {
-   display:inline-table; /* TRANSFORMAR A CELDA */
-color:#fff;
-margin-top:1em;
-margin-bottom:1em;
-}
-
 #acercade  {
   background-color: #000;
   color:#fff;
+
+  text-align: justify;
 }
 
-#android {
-  display:table-cell;
-   background: url('../images/android.png') no-repeat  center;
-   background-size:contain;
-
-   vertical-align: middle; /* CENTRAR EN VERTICALMENTE EN LA CELDA */
-
-}
-#ios {
-  display:table-cell;
-   background: url('../images/iphone.png') no-repeat  center;
-   background-size:contain;
-
-   vertical-align: middle; /* CENTRAR EN VERTICALMENTE EN LA CELDA */
+#acercade p {
+    border:2em solid #000;
 }
 
-.phone {
-margin-left: 2em;
- color:#000;
-}
-
-.phone1 {
+#acercade h1 {
+    padding: 2em 2em 0 2em;
 }
 
 @font-face {
@@ -283,7 +266,51 @@ i {
      }
 
 }
-     @media (min-width: 1280px) { /* PARA PANTALLAS GRANDES */
+
+@media (min-width: 768px) {
+  #download  {
+     display:inline-table; /* TRANSFORMAR A CELDA */
+  color:#fff;
+  margin-top:1em;
+  margin-bottom:1em;
+  }
+
+
+
+  #android {
+    display:table-cell;
+     background: url('../images/android.png') no-repeat  center;
+     background-size:contain;
+
+     vertical-align: middle; /* CENTRAR EN VERTICALMENTE EN LA CELDA */
+
+  }
+  #ios {
+    display:table-cell;
+     background: url('../images/iphone.png') no-repeat  center;
+     background-size:contain;
+
+     vertical-align: middle; /* CENTRAR EN VERTICALMENTE EN LA CELDA */
+  }
+}
+     @media (min-width: 1600px) { /* PARA PANTALLAS GRANDES */
+
+
+       #phone1 {
+       margin-left: 2em;
+        color:#000;
+         background: url('../images/downloadandroid.png') no-repeat;
+         background-size:contain;
+         height: 15%;
+       }
+
+       #phone2 {
+         margin-left: 2em;
+          color:#000;
+           background: url('../images/downloadios.png') no-repeat;
+           background-size:contain;
+           height: 15%;
+       }
 
 
 }
