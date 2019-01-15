@@ -61,3 +61,57 @@ $(window).load(function() {
 $(window).resize(function() {
     Dimensiones(); //ACTUALIZAR DIMENSIONES
 });
+
+window.addEventListener("scroll", function(event) {
+var scroll = window.scrollY //Modern Way (Chrome, Firefox)
+   || window.pageYOffset //(Modern IE, including IE11
+   || document.documentElement.scrollTop; //(Old IE, 6,7,8))
+
+   var h = $(window).height();
+   var divHeaderHeight = $("#divHeader").height();
+   var hN = h - divHeaderHeight; // CORREGIR POSICION
+
+var scroll2 = $(window).height();
+var scroll3 =$("#intro-text").width();
+
+//Obtener el % del scroll para posteriormente poder establecer un maximo % y que no se salga de la pantalla
+          var scrollTop = $(window).scrollTop();
+					var docHeight = $(document).height();
+					var winHeight = $(window).height();
+          var scrollPercent = (scrollTop) / (docHeight - winHeight);
+					var scrollPercentRounded = Math.round(scrollPercent*100);
+/*
+if (scroll < h) {
+  $("#acercade").css({ // ESTABLECER NUEVAS DIMENSIONES
+    'margin-top':scroll + 'px'
+  });
+}
+*/
+if (scroll < scroll2) { //En caso que la posicion del scroll sea menor al tamaño de la pantalla
+
+  $("#network").css({
+    'margin-bottom': '-' + scroll + 'px'
+  });
+
+$("#download").css({
+  'padding-top':scroll + 'px'
+});
+
+$(".pag2 > div:first-of-type").css({ // ESCONDER TEXTO
+  'opacity': scrollPercent*3
+});
+
+}
+if (scroll < scroll2 && scrollPercentRounded < 15) { //En caso que la posicion del scroll sea menor al tamaño de la pantalla
+
+  $("#intro span:first-of-type").css({
+    'margin-right':scrollPercentRounded + '%'
+  });
+  $("#intro span:last-of-type").css({
+    'margin-left':scrollPercentRounded + '%'
+  });
+
+}
+
+
+}, false);

@@ -12,6 +12,19 @@ body{
    background-size: cover;
 }
 
+.pag2 > div:first-of-type {
+  opacity: 0;
+  color:#000;
+  text-align: justify;
+}
+
+.pag2 > div:first-of-type p {
+    border:2em solid transparent;
+}
+
+.pag2 > div:first-of-type h1 {
+    padding: 2em 2em 0 2em;
+}
 
 .pag3 {
   background-color: #fff;
@@ -93,20 +106,7 @@ background-color: #ececec;
 
 }
 
-#acercade  {
-  background-color: #000;
-  color:#fff;
 
-  text-align: justify;
-}
-
-#acercade p {
-    border:2em solid #000;
-}
-
-#acercade h1 {
-    padding: 2em 2em 0 2em;
-}
 
 @font-face {
     font-family: 'LithosPro'; /*a name to be used later*/
@@ -132,7 +132,7 @@ background-color: #ececec;
   margin-bottom: 0.5em;
 }
 
-#intro h1 {
+#intro span {
   font-family: 'LithosPro';
   font-weight: bold;
   text-transform: uppercase;
@@ -281,7 +281,7 @@ i {
     display:table-cell;
      background: url('../images/android.png') no-repeat  center;
      background-size:contain;
-
+background-clip: border-box;
      vertical-align: middle; /* CENTRAR EN VERTICALMENTE EN LA CELDA */
 
   }
