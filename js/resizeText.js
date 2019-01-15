@@ -6,6 +6,7 @@ var resizeText = function () {
         var tamanoActual = $(window).width(); // Ancho de la ventana
         var porcentaje = Math.sqrt(tamanoActual) / Math.sqrt(predefinidoResolucion);
         var nuevoTamanoFuente = predefinidoTamanoFuente * porcentaje;
+      
         $("#intro-text h1").css("font-size", nuevoTamanoFuente*1.5 + '%');
         $("#intro-text h3").css("font-size", nuevoTamanoFuente  + '%');
         $("#main-menu li:not(:last-child)").css("font-size", nuevoTamanoFuente / 2 + '%');
