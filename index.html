@@ -13,13 +13,17 @@
     <link rel="icon" href="fav_icon.png">
     <link rel="stylesheet" href="css/reset.css"> <!-- Resetear todos los parametros de CSS para cargar los nuestros desde el inicio -->
     <link rel="stylesheet" href="css/estilo.css">
-    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script type="text/javascript" src="js/funcionesGenerales.js" ></script> <!-- GENERAL SCRIPTS -->
     <script type="text/javascript" src="js/resizeText.js" ></script> <!-- FOR RESPONSIVE DESIGN -->
+    <script type="text/javascript" src="js/jquery-inertiaScroll.js"></script> <!-- smooth -->
+    <script type="text/javascript" src="js/rueda.js"></script>
 
 </head>
 <body>
-
+<div id="content">
 <div class="pag1"> <!-- fit web height and width -->
     <div id="divHeader"> <!-- Div del menu principal -->
         <header id="main-header">
@@ -28,7 +32,7 @@
               </a><!-- Logo completo: PNG // background-color: #ececec; border right solid 1px #bdb7aa; -->
         </header>
         <!-- Por defecto el head se va a dividir en  7 casillas: 100% / 7, El header ocupará la primera-->
-        <nav id="main-menu">
+        <nav id="main-menu" >
 
             <ul><!-- background-color: #d3cec1; border left dashed #bdb7aa; OMITIR 1º BORDER LI-->
                 <!-- AGRUPAMOS LI EN UNA SOLA FILA PARA QUE INLINE-BLOCK NO CREE ESPACIOS -->
@@ -65,6 +69,7 @@
           <li><img src="images/network/whatsapp.png" alt="whatsapp"></li>
           <li><img src="images/network/facebook.png" alt="facebook"></li>
           <li><img src="images/network/twitter.png"  alt="twitter"></li>
+          <div id="prueba"></div>
         </ul>
       </aside>
     </section>
@@ -72,7 +77,8 @@
 </div>
 <div class="pag2"> <!-- fit web height and width -->
 
-  <div>
+  <div class="transparente">
+
     <h1>El tiempo es dinero</h1>
   <p>En la actualidad, muchos de nosotros sentimos que nunca tenemos suficiente de ese precioso bien, pero con nuestra aplicaciónna
      Tenemos un sistema de inteligencia artificial que te propone estrategias nuevas para administrar tu tiempo y lograr mucho más día a día y con mayor rapidez y eficacia.
@@ -100,5 +106,6 @@
 
     </section>
 </div>-->
+</div>
 </body>
 </html>
