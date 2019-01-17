@@ -9,21 +9,52 @@ body{
   overflow-y: scroll;
 }
 
-.box{
-  position: relative;
-  width: 100px;
-  height: 100px;
-  text-align:center;
-  font-size:50px;
-}
+.pag1 {
 
+}
 .pag2 {
   background: url('../images/download-background.png') no-repeat center center;
    background-size: cover;
 }
+/* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+
+
+/* CSS */
+
+.vid {
+  position: fixed;
+  
+    top: 0; left:0;
+    width: 100%; height: 100%;
+    z-index: -1;
+}
+.contenta {
+    position:absolute;
+    top:0; left:0;
+    background: black;
+    color:white;
+}
+
+
+/* Add some content at the bottom of the video/page */
+.content {
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
+
 
 .pag2 > div:first-of-type {
-  opacity: 0;
   color:#000;
   text-align: justify;
 }
@@ -37,7 +68,10 @@ body{
 }
 
 .pag3 {
-  background-color: #fff;
+}
+
+#content {
+  margin-top: -3em;
 }
 
 #divHeader { /* CONTIENE EL LOGO Y MENU PRINCIPAL - main-header & main-menu */
@@ -117,11 +151,47 @@ background-color: #ececec;
 
 .transparente {
    z-index: 1;
-   position:absolute;
+   position:relative;
 }
 
 .transparente h1 {
   font-size: 1em;
+}
+
+#menu_unitegallery {
+  display:table; /* TRANSFORMAR A CELDA */
+  height: 120px;
+  vertical-align: middle; /* CENTRAR EN VERTICALMENTE EN LA CELDA */
+background-color: #000;
+background-image: linear-gradient(rgba(51, 52, 54, 0.55),rgba(51, 52, 54, 0.55)), url('../images/background-menu2.png');
+border-top: solid #cfcabd;
+border-bottom: solid #cfcabd;
+border-width: 1px 0px 1px 0px;
+}
+
+#menu_unitegallery ul {
+  display: inline-table; /* OCUPAR TODA LA TABLA */
+  height: 100%;
+  width: 100%;
+  table-layout: fixed;  /*MISMA ANCHURA EN LI */
+  text-transform: uppercase;
+  font-family: 'Itim', sans-serif;
+  color: black;
+}
+
+#menu_unitegallery ul > li {
+  display:table-cell; /* TRANSFORMAR A CELDA */
+  vertical-align: middle; /* CENTRAR EN VERTICALMENTE EN LA CELDA */
+  text-align: center;
+}
+
+/*#menu_unitegallery ul > li:hover {
+background-color: rgba(0, 0, 0, 0.8);
+  color:#fff;
+}*/
+
+#menu_unitegallery ul > li > p:hover {
+
 }
 
 @font-face {
@@ -210,11 +280,9 @@ i {
     display: table-cell !important;
     height: auto;
 
-
   }
   .animar {
-
-        transform: scaleX(0.5);
+    transform: scaleX(0.5);
      transform: scaleY(2);
      transform: scale(0.5);
      transform: scale(2, 1);
@@ -225,7 +293,6 @@ i {
   /*  OCULTAR TODOS LOS LI MENOS EL ULTIMO */
   #main-menu li:not(:last-child) {
     display: none;
-
   }
 
   #main-header{
@@ -298,14 +365,19 @@ i {
 
 @media (min-width: 768px) {
   #download  {
-     display:inline-table; /* TRANSFORMAR A CELDA */
+  display:inline-table; /* TRANSFORMAR A CELDA */
   color:#fff;
   margin-top:12em;
   margin-bottom:1em;
+  position: fixed;
   }
 
 
-
+#asd {
+  position: fixed !important;
+font-size: 3em;
+  color: #000;
+}
   #android {
     display:table-cell;
      background: url('../images/android.png') no-repeat  center;

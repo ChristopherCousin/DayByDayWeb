@@ -92,11 +92,11 @@ if (scroll < h) {
 */
 
 if (scroll < scroll2) { //En caso que la posicion del scroll sea menor al tamaño de la pantalla
-
-  $("#network").css({
-    'margin-bottom': '-' + scroll + 'px'
+/*
+  $("#intro-text").css({
+    'margin-top': scroll + 'px'
   });
-
+*/
 $("#download").css({
   'padding-top':scroll + 'px'
 });
