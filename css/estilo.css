@@ -16,10 +16,13 @@ body{
 }
 /* Style the video: 100% width and height to cover the entire window */
 #myVideo {
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
+  left: 50%;
   min-height: 100%;
+  min-width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
 }
 
 
@@ -137,7 +140,7 @@ background-color: #ececec;
 
 }
 
-#intro  {
+#intro2  {
 
    background-size: cover;
    display:table-cell; /* TRANSFORMAR A CELDA */
@@ -209,16 +212,16 @@ background-color: rgba(0, 0, 0, 0.8);
     src: url('../font/estre.ttf'); /*URL to font*/
 }
 
-#intro > div {
+#intro2 > div {
   text-align: center;
 }
 
-#intro h3 {
+#intro2 h3 {
   font-family: 'SegoePrint';
   margin-bottom: 0.5em;
 }
 
-#intro span {
+#intro2 span {
   font-family: 'LithosPro';
   font-weight: bold;
   text-transform: uppercase;

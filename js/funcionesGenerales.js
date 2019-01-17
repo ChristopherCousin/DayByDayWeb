@@ -21,7 +21,7 @@ var Dimensiones=function(){
 
     var wPhone = w / 2;
   var hPhone = h / 2;
-    $("#intro").css({ // ESTABLECER NUEVAS DIMENSIONES
+    $("#intro2").css({ // ESTABLECER NUEVAS DIMENSIONES
       'width':w + 'px',
       'height':hWelcome + 'px',
     });
@@ -35,6 +35,49 @@ var Dimensiones=function(){
       'width':w + 'px',
       'height':h + 'px',
     });
+
+
+
+    /*
+            Resoluciones:
+            Dispositivo Anchura
+            Movil   0 - 479
+            Tablet portrait   480 - 767
+            Tablet landscape   768 - 1279
+            Desktop > 1280
+      */
+
+
+             if (w2 >= 1280) {
+                //$("#mensaje").html("<p>Vision pantalla grande (portatil y ordenador)</p>");
+      //$("#mensaje").html(sHeight + " " + sHeight2 + " " + h + " " + h2 + " " + divHeaderHeight + " " + hN);
+
+            }
+            else if (w2 >= 768 && w < 1280) {
+              //  $("#mensaje").html("<p>Vision pantalla mediana-grande (tablets)</p>");
+      //$("#mensaje").html(sHeight + " " + sHeight2 + " " + h + " " + h2 + " " + divHeaderHeight + " " + hN);
+        }
+
+            else if (w2 >= 480) {
+          //      $("#mensaje").html("<p>Vision pantalla mediana (tablets)</p>");
+          //  $("#mensaje").html(sHeight + " " + sHeight2 + " " + h + " " + h2 + " " + divHeaderHeight + " " + hN);
+
+            }
+            else {
+          //      $("#mensaje").html("<p>Vision pantalla pequeña (movil)</p>");
+          $("#intro2").css({ // ESTABLECER NUEVAS DIMENSIONES
+            'width':0 + 'px',
+            'height':0 + 'px',
+          });
+      //$("#mensaje").html(sHeight + " " + sHeight2 + " " + h + " " + h2 + " " + divHeaderHeight + " " + hN);
+
+            }
+
+
+
+
+
+
 };
 
 $(document).ready(function() {
