@@ -71,7 +71,7 @@ var scroll = window.scrollY //Modern Way (Chrome, Firefox)
    || document.documentElement.scrollTop; //(Old IE, 6,7,8))
 
    var h = $(window).height();
-   var divHeaderHeight = $("#divHeader").height();
+   var divHeaderHeight = $("#pag").height();
    var hN = h - divHeaderHeight; // CORREGIR POSICION
 
 var scroll2 = $(window).height();
