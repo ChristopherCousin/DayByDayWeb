@@ -59,7 +59,7 @@ var Dimensiones=function(){
             }
             else {
           //      $("#mensaje").html("<p>Vision pantalla pequeña (movil)</p>");
-
+        
       //$("#mensaje").html(sHeight + " " + sHeight2 + " " + h + " " + h2 + " " + divHeaderHeight + " " + hN);
 
             }
@@ -79,7 +79,7 @@ $(document).ready(function() {
           $('#header__icon').click(function(e){
             $('#main-header').toggleClass('ocultar'); //ocultar / mostrar
             $("#main-menu li:not(:first-child)").toggleClass('transformar'); //hacer visible todos menos inicio al ocultar / mostrar
-              $("#main-menu li:last-child").toggleClass('animar');
+             // $("#main-menu li:last-child").toggleClass('animar');
           });
 
         })(jQuery);
@@ -144,10 +144,10 @@ document.getElementById("prueba").innerHTML = docHeight;
 
 if (scroll < scroll2 && scrollPercentRounded < 15) { //En caso que la posicion del scroll sea menor al tamaño de la pantalla
 
-  $("#intro-text span:first-of-type").css({
+  $("#intro span:first-of-type").css({
     'margin-right':scrollPercentRounded + '%'
   });
-  $("#intro-text span:last-of-type").css({
+  $("#intro span:last-of-type").css({
     'margin-left':scrollPercentRounded + '%'
   });
 

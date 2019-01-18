@@ -121,12 +121,15 @@ background-color: #ececec;
 }
 
 #main-menu ul > li:hover {
-  background-color: #fff;
   color:#000;
 }
 
 #main-menu li:hover:first-child {
   border-left: none;
+}
+
+#main-menu li:hover:hover {
+	 background-color: #ececec;
 }
 
 #main-menu a {
@@ -288,10 +291,9 @@ i {
 
   }
   .animar {
-    transform: scaleX(0.5);
+    transform: scaleX(2);
      transform: scaleY(2);
-     transform: scale(0.5);
-     transform: scale(2, 1);
+     transform: scale(1,2);
   }
 #main-menu li {
   transition: transform 1s ease;
