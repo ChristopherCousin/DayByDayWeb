@@ -152,13 +152,16 @@ background-color: #ececec;
 .transparente {
    z-index: 1;
    position:relative;
-  background-color: #284b67;
-/*   background-image: url('../images/intro/backgroundIntro.png'); */
-  color: white;
+   background-image: url('../images/Background2.png');
+   color: white;
+   background-size: 120em;
+   background-position: center;
+
+
 }
 
 .transparente h1 {
-  font-size: 1em;
+  font-size: 2em;
 }
 
 #menu_unitegallery {
