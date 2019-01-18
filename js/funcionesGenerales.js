@@ -26,15 +26,9 @@ var Dimensiones=function(){
       'height':hWelcome + 'px',
     });
 
-    $("#download").css({ // ESTABLECER NUEVAS DIMENSIONES
-      'width':w + 'px',
-      'height':hWelcome + 'px',
-    });
 
-    $("#acercade").css({ // ESTABLECER NUEVAS DIMENSIONES
-      'width':w + 'px',
-      'height':h + 'px',
-    });
+
+
 
 
 
@@ -65,10 +59,7 @@ var Dimensiones=function(){
             }
             else {
           //      $("#mensaje").html("<p>Vision pantalla pequeña (movil)</p>");
-          $("#intro2").css({ // ESTABLECER NUEVAS DIMENSIONES
-            'width':0 + 'px',
-            'height':0 + 'px',
-          });
+        
       //$("#mensaje").html(sHeight + " " + sHeight2 + " " + h + " " + h2 + " " + divHeaderHeight + " " + hN);
 
             }
@@ -140,9 +131,7 @@ if (scroll < scroll2) { //En caso que la posicion del scroll sea menor al tamañ
     'margin-top': scroll + 'px'
   });
 */
-$("#download").css({
-  'padding-top':scroll + 'px'
-});
+
 
 $(".pag2 > div:first-of-type").css({ // ESCONDER TEXTO
   'opacity': scrollPercent*3
