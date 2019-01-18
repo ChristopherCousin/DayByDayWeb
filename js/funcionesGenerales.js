@@ -59,7 +59,7 @@ var Dimensiones=function(){
             }
             else {
           //      $("#mensaje").html("<p>Vision pantalla pequeña (movil)</p>");
-        
+
       //$("#mensaje").html(sHeight + " " + sHeight2 + " " + h + " " + h2 + " " + divHeaderHeight + " " + hN);
 
             }
@@ -144,10 +144,10 @@ document.getElementById("prueba").innerHTML = docHeight;
 
 if (scroll < scroll2 && scrollPercentRounded < 15) { //En caso que la posicion del scroll sea menor al tamaño de la pantalla
 
-  $("#intro span:first-of-type").css({
+  $("#intro-text span:first-of-type").css({
     'margin-right':scrollPercentRounded + '%'
   });
-  $("#intro span:last-of-type").css({
+  $("#intro-text span:last-of-type").css({
     'margin-left':scrollPercentRounded + '%'
   });
 
