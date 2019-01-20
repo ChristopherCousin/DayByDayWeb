@@ -13,6 +13,12 @@ body{
 
 }
 .pag2 {
+
+  background-image: url('../images/Background2.png');
+}
+
+.pag3 {
+
 }
 /* Style the video: 100% width and height to cover the entire window */
 #myVideo {
@@ -55,7 +61,7 @@ body{
 }
 
 
-.pag2 > div:first-of-type {
+/*.pag2 > div:first-of-type {
 
   text-align: justify;
 }
@@ -67,7 +73,7 @@ body{
 .pag2 > div:first-of-type h1 {
     padding: 2em 2em 0 2em;
 }
-
+*/
 .pag3 {
 }
 
@@ -155,16 +161,22 @@ background-color: #ececec;
 .transparente {
    z-index: 1;
    position:relative;
-   background-image: url('../images/Background2.png');
    color: white;
-   background-size: 120em;
-   background-position: center;
 
 
 }
 
 .transparente h1 {
   font-size: 2em;
+}
+
+
+.contentb {
+padding:2em;
+}
+
+.contentb h1 {
+padding-bottom: 1em;
 }
 
 #menu_unitegallery {
@@ -184,14 +196,19 @@ border-width: 1px 0px 1px 0px;
   width: 100%;
   table-layout: fixed;  /*MISMA ANCHURA EN LI */
   text-transform: uppercase;
-  font-family: 'Itim', sans-serif;
-  color: black;
+    font-family: 'Muli', sans-serif;
+    color: #596e88;
 }
 
 #menu_unitegallery ul > li {
   display:table-cell; /* TRANSFORMAR A CELDA */
   vertical-align: middle; /* CENTRAR EN VERTICALMENTE EN LA CELDA */
   text-align: center;
+}
+
+#menu_unitegallery a {
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
 }
 
 /*#menu_unitegallery ul > li:hover {
@@ -373,31 +390,33 @@ i {
 
 @media (min-width: 768px) {
   #download  {
-  display:inline-table; /* TRANSFORMAR A CELDA */
   color:#fff;
-  margin-top:12em;
-  margin-bottom:1em;
   position: fixed;
+  background-color: black;
   }
 
 
   #android {
     display:table-cell;
-     background: url('../images/android.png') no-repeat  center;
+     background: url('../images/android.png') no-repeat  center center;
      background-size:contain;
 background-clip: border-box;
      vertical-align: middle; /* CENTRAR EN VERTICALMENTE EN LA CELDA */
+     width: 100px;
+     height: 100px;
 
   }
   #ios {
     display:table-cell;
-     background: url('../images/iphone.png') no-repeat  center;
+     background: url('../images/iphone.png') no-repeat  center center;
      background-size:contain;
-
+background-clip: border-box;
      vertical-align: middle; /* CENTRAR EN VERTICALMENTE EN LA CELDA */
+     width: 100px;
+     height: 100px;
   }
 }
-     @media (min-width: 1600px) { /* PARA PANTALLAS GRANDES */
+  /*   @media (min-width: 1600px) { /* PARA PANTALLAS GRANDES *
 
 
        #phone1 {
@@ -417,4 +436,4 @@ background-clip: border-box;
        }
 
 
-}
+}*/

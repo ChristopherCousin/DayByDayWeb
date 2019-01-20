@@ -21,12 +21,15 @@ var Dimensiones=function(){
 
     var wPhone = w / 2;
   var hPhone = h / 2;
-    $("#intro2").css({ // ESTABLECER NUEVAS DIMENSIONES
-      'width':w + 'px',
-      'height':hWelcome + 'px',
-    });
+  $("#intro2").css({ // ESTABLECER NUEVAS DIMENSIONES
+    'width':w + 'px',
+    'height':hWelcome + 'px',
+  });
 
-
+  $(".pag2").css({ // ESTABLECER NUEVAS DIMENSIONES
+    'width':w + 'px',
+    'height':h + 'px',
+  });
 
 
 
@@ -71,6 +74,10 @@ var Dimensiones=function(){
 
 };
 
+
+
+
+
 $(document).ready(function() {
         Dimensiones(); //ASIGNAR DIMENSIONES
 
@@ -87,6 +94,14 @@ $(document).ready(function() {
         $("").inertiaScroll({
           parent: $("#content")
         });
+
+        //Contenido diferente
+        $('#menu a').click(function(){
+              $('.transparenteTexto div').hide();
+              var tmp_div = $(this).parent().index();
+              $('.transparenteTexto div').eq(tmp_div).show();
+        });
+        $('.transparenteTexto div').hide();
 });
 
 //SE EJECUTA UNA VEZ CARGADA LA PÁGINA COMPLETAMENTE
@@ -133,7 +148,7 @@ if (scroll < scroll2) { //En caso que la posicion del scroll sea menor al tamañ
 */
 
 
-$(".pag2 > div:first-of-type").css({ // ESCONDER TEXTO
+$(".transparenteTexto").css({ // ESCONDER TEXTO
   'opacity': scrollPercent*3
 });
 
