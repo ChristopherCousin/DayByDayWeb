@@ -31,6 +31,10 @@ var Dimensiones=function(){
     'height':h + 'px',
   });
 
+  $(".imgs-grid").css({ // ESTABLECER NUEVAS DIMENSIONES
+    'max-width':w + 'px',
+  });
+
 
 
 
@@ -96,6 +100,8 @@ $(document).ready(function() {
         });
 
         //Contenido diferente
+
+
         $('#menu a').click(function(){
               $('.transparenteTexto div').hide();
               var tmp_div = $(this).parent().index();
@@ -147,11 +153,11 @@ if (scroll < scroll2) { //En caso que la posicion del scroll sea menor al tamañ
   });
 */
 
-
+/*
 $(".transparenteTexto").css({ // ESCONDER TEXTO
   'opacity': scrollPercent*3
 });
-
+*/
 }
 
 document.getElementById("prueba").innerHTML = docHeight;

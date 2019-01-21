@@ -14,11 +14,12 @@ body{
 }
 .pag2 {
 
-  background-image: url('../images/Background2.png');
+  /*background-image: url('../images/Background2.png');*/
 }
 
-.pag3 {
-
+#gallery7 {
+margin:0;
+padding: 0;
 }
 /* Style the video: 100% width and height to cover the entire window */
 #myVideo {
@@ -74,7 +75,12 @@ body{
     padding: 2em 2em 0 2em;
 }
 */
-.pag3 {
+.pag4 {
+  position: fixed;
+}
+
+.pag2 {
+background-color: black;
 }
 
 #content {

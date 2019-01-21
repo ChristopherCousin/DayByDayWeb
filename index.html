@@ -14,12 +14,15 @@
     <link rel="stylesheet" href="css/reset.css"> <!-- Resetear todos los parametros de CSS para cargar los nuestros desde el inicio -->
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/images-grid.css">
     <script src="js/jquery.min.js"></script>
 <script src="js/jquery-ui-1.9.2.custom.js"></script>
     <script type="text/javascript" src="js/funcionesGenerales.js" ></script> <!-- GENERAL SCRIPTS -->
     <script type="text/javascript" src="js/resizeText.js" ></script> <!-- FOR RESPONSIVE DESIGN -->
     <script type="text/javascript" src="js/jquery-inertiaScroll.js"></script> <!-- smooth -->
     <script type="text/javascript" src="js/rueda.js"></script>
+    <script type="text/javascript" src="js/images-grid.js"></script>
+
 <script>
 //Contenido diferente
 $('#menu a').click(function(e){
@@ -34,6 +37,26 @@ function hideContentDivs(){
 }
 hideContentDivs();
 </script>
+
+<script>
+
+          var images = ['images/galeria/1.jpg',
+        'images/galeria/2.jpg',
+        'images/galeria/3.jpg',
+        'images/galeria/4.jpg',
+        'images/galeria/5.jpg',
+        'images/galeria/6.jpg'];
+
+          $(function() {
+              $('#gallery7').imagesGrid({
+                  images: images,
+                  align: true,
+                  getViewAllText: function(imgsCount) { return 'Ver todas las imágenes' }
+              });
+
+          });
+
+      </script>
 </head>
 <body>
 
@@ -104,27 +127,30 @@ hideContentDivs();
 </div>
 <div class="pag2"> <!-- fit web height and width -->
 
-    <div class="transparente">
+    <div  id="asdd" class="transparente">
       <nav id="menu_unitegallery"> <!-- Ocupa un 10% de altura, 100% ancho -->
       <ul id="menu">
-        <li id="link1"><a href="#page1">Funciones</a></li>
-        <li id="link2"><a href="#page2">Descargar</a></li>
+        <li id="link1"><a href="#asdd">¿Qué utilidades tiene?</a></li>
+        <li id="link2"><a href="#asdd">¿Por qué lo usamos?</a></li>
       </ul>
   </nav>
   <section class="transparenteTexto">
             <div id="page1" class="contentb">
-            <h1>¿Qué es Lorem Ipsum?</h1>
-            <p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.</p>
+              <h1>¿Qué utilidades tiene?</h1>
+              <p>Es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.</p>
+
             </div>
             <div id="page2" class="contentb">
             <h1>¿Por qué lo usamos?</h1>
             <p>Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem Ipsum es que tiene una distribución más o menos normal de las letras, al contrario de usar textos como por ejemplo "Contenido aquí, contenido aquí". Estos textos hacen parecerlo un español que se puede leer. Muchos paquetes de autoedición y editores de páginas web usan el Lorem Ipsum como su texto por defecto, y al hacer una búsqueda de "Lorem Ipsum" va a dar por resultado muchos sitios web que usan este texto si se encuentran en estado de desarrollo. Muchas versiones han evolucionado a través de los años, algunas veces por accidente, otras veces a propósito (por ejemplo insertándole humor y cosas por el estilo).</p>
             </div>
-
   </section>
   </div>
+  <section>
+          <article id="gallery7"></article>
+        </section>
 
-
+<!--
   <section id="download" >
         <article id="android" >
           </article>
@@ -132,8 +158,8 @@ hideContentDivs();
           </article>
   </section>
 </div>
-
-
+-->
+</div>
 <div class="pag3">
 
 </div>
