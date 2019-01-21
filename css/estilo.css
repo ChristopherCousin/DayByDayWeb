@@ -90,10 +90,10 @@ background-color: black;
 #divHeader { /* CONTIENE EL LOGO Y MENU PRINCIPAL - main-header & main-menu */
   display:table; /* CREAMOS UNA TABLA */
   width: 100%;
-  height: 7em;
+  height: 6em;
   border-bottom: solid #000;
   border-width: 0 1px 1px 0;
-
+  background-color: #fff;
 }
 
 #main-header {
@@ -104,7 +104,6 @@ background-color: black;
   width: 20%;
 border-right: solid #bdb7aa;
 border-width: 0 1px 1px 0;
-background-color: #ececec;
 }
 
 
@@ -121,15 +120,13 @@ background-color: #ececec;
   table-layout: fixed; /* MISMA ANCHURA EN LI */
   text-transform: uppercase;
   font-family: 'Muli', sans-serif;
-  color: #596e88;
+  color: #000;
 }
 
 #main-menu ul > li {
-  background-color: #ececec;
   display:table-cell; /* TRANSFORMAR A CELDA */
   vertical-align: middle; /* CENTRAR EN VERTICALMENTE EN LA CELDA */
   text-align: center;
-  color: #596e88;
 }
 
 #main-menu ul > li:hover {
@@ -141,7 +138,7 @@ background-color: #ececec;
 }
 
 #main-menu li:hover:hover {
-	 background-color: #ececec;
+	 background-color: #fff;
 }
 
 #main-menu a {
@@ -160,7 +157,7 @@ background-color: #ececec;
    background-size: cover;
    display:table-cell; /* TRANSFORMAR A CELDA */
    vertical-align: middle; /* CENTRAR EN VERTICALMENTE EN LA CELDA */
-  color: #dfdfdf;
+  color: #fff;
 
 }
 
@@ -203,7 +200,7 @@ border-width: 1px 0px 1px 0px;
   table-layout: fixed;  /*MISMA ANCHURA EN LI */
   text-transform: uppercase;
     font-family: 'Muli', sans-serif;
-    color: #596e88;
+    color: #000;
 }
 
 #menu_unitegallery ul > li {
