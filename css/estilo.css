@@ -197,14 +197,14 @@ border-radius: 14px 14px 14px 14px;
 -moz-border-radius: 14px 14px 14px 14px;
 -webkit-border-radius: 14px 14px 14px 14px;
 border: 5px solid #ffffff;
-height: 5em;
+height: 7em;
 width: 30%;
 min-width: 15em;
 
 }
 
 #page1 section > article > img {
-  max-width: 80px;
+  max-width: 40%;
   height: auto;
       border: 0.3em solid #fff;
 }

@@ -98,9 +98,7 @@ $(document).ready(function() {
 
         })(jQuery);
 
-        $("").inertiaScroll({
-          parent: $("#content")
-        });
+      
 
         //Contenido diferente
 
