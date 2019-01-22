@@ -15,14 +15,16 @@
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="css/jquery-ui.css">
     <link rel="stylesheet" href="css/images-grid.css">
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
     <script src="js/jquery.min.js"></script>
-<script src="js/jquery-ui-1.9.2.custom.js"></script>
+    <script src="js/jquery-ui-1.9.2.custom.js"></script>
     <script type="text/javascript" src="js/funcionesGenerales.js" ></script> <!-- GENERAL SCRIPTS -->
     <script type="text/javascript" src="js/resizeText.js" ></script> <!-- FOR RESPONSIVE DESIGN -->
     <script type="text/javascript" src="js/jquery-inertiaScroll.js"></script> <!-- smooth -->
     <script type="text/javascript" src="js/rueda.js"></script>
     <script type="text/javascript" src="js/images-grid.js"></script>
-
+    <script src="js/modernizr.custom.js"></script>
 <script>
 //Contenido diferente
 $('#menu a').click(function(e){
@@ -70,29 +72,31 @@ hideContentDivs();
         <!-- Por defecto el head se va a dividir en  7 casillas: 100% / 7, El header ocupará la primera-->
         <nav id="main-menu" >
 
+
+            <nav class="cl-effect-5">
             <ul><!-- background-color: #d3cec1; border left dashed #bdb7aa; OMITIR 1º BORDER LI-->
                 <!-- AGRUPAMOS LI EN UNA SOLA FILA PARA QUE INLINE-BLOCK NO CREE ESPACIOS -->
                 <li>
-                  <a class="active" href="#inicio">Inicio</a>
+                  <a class="active" href="#inicio"><span data-hover="Inicio">Inicio</span></a>
                 </li>
                 <li>
-                  <a href="#descargar">Descargar</a>
+                  <a href="#descargar"><span data-hover="Descargar">Descargar</span></a>
                 </li>
                 <li>
-                  <a href="#features">Funciones</a>
+                  <a href="#features"><span data-hover="Funciones">Funciones</span></a>
                 </li>
                 <li>
-                  <a href="#FAQ">FAQ</a>
+                  <a href="#FAQ"><span data-hover="FAQ">FAQ</span></a>
                 </li>
                 <li>
-                  <a href="#contact">Contacto</a>
+                  <a href="#contact"><span data-hover="Contacto">Contacto</span></a>
                 </li>
                 <li>
                   <a href="#inicio" id="header__icon" class="header__icon">&#9776;</a> <!-- COLLAPSE MENU -->
                 </li>
             </ul>
+            </nav>
 
-        </nav>
     </div>    <!-- border bottom solid 1px #222121 -->
 
     <div class='vid'>
@@ -129,10 +133,13 @@ hideContentDivs();
 
     <div  id="asdd" class="transparente">
       <nav id="menu_unitegallery"> <!-- Ocupa un 10% de altura, 100% ancho -->
+
+          <nav class="cl-effect-1">
       <ul id="menu">
         <li id="link1"><a href="#asdd">¿Qué utilidades tiene?</a></li>
         <li id="link2"><a href="#asdd">¿Por qué lo usamos?</a></li>
       </ul>
+    </nav>
   </nav>
   <section class="transparenteTexto">
             <div id="page1" class="contentb">

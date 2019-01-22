@@ -97,9 +97,11 @@ $(document).ready(function() {
           });
 
         })(jQuery);
-
-      
-
+/*
+        $("").inertiaScroll({
+          parent: $("#content")
+        });
+*/
         //Contenido diferente
 
 
@@ -109,6 +111,16 @@ $(document).ready(function() {
               $('.transparenteTexto div').eq(tmp_div).show();
         });
         $('.transparenteTexto div').hide();
+
+
+        $("#Trigger2").click(function () {
+            if ($("#Fader").hasClass("fadeout"))
+                $("#Fader").removeClass("fadeout").addClass("fadein");
+            else
+                $("#Fader").removeClass("fadein").addClass("fadeout");
+        });
+
+        
 });
 
 //SE EJECUTA UNA VEZ CARGADA LA PÁGINA COMPLETAMENTE
