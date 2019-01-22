@@ -35,7 +35,10 @@ var Dimensiones=function(){
     'max-width':w + 'px',
   });
 
-
+  $("#myVideo").css({
+    'max-width':w + '%',
+    'max-height':h + '%'
+  });
 
 
 
