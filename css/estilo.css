@@ -14,7 +14,10 @@ body{
 }
 .pag2 {
 
-  /*background-image: url('../images/Background2.png');*/
+  border-bottom: 1px;
+  border-color: white;
+  border-style: solid;
+  background-image: url('../images/intro2/fondo.png');
 }
 
 #gallery7 {
@@ -91,6 +94,7 @@ background-color: black;
   border-bottom: solid #000;
   border-width: 0 1px 1px 0;
   background-color: #fff;
+
 }
 
 #main-header {
@@ -182,57 +186,60 @@ padding-bottom: 1em;
 }
 
 #page1 {
-  background-color: black;
   color:black;
   text-align: center;
-
+font-family: 'OldNewspaperTypes';
+  text-transform: uppercase;
 }
+
 
 
 #page1 section > article {
-  position: relative;
-display: flex;
+
 border-radius: 14px 14px 14px 14px;
 -moz-border-radius: 14px 14px 14px 14px;
 -webkit-border-radius: 14px 14px 14px 14px;
-border: 5px solid #ffffff;
-height: 7em;
-width: 30%;
-min-width: 15em;
 
+min-height: 3em;
+height: auto;
+width: 30%;
+min-width: 100%;
 }
 
 #page1 section > article > img {
-  max-width: 40%;
-  height: auto;
-      border: 0.3em solid #fff;
+
 }
 
 #page1 section > article > p {
-  border: 0.3em solid #fff;
   text-align: justify;
+  padding: 1em;
+  color: white;
+}
 
+
+#page1 section > article > h1 {
+  text-align: left;
+  padding: 0.4em;
+  color: white;
 }
 
 #page1 section > article:nth-child(1) {
-  background-color: white;
 
-margin-bottom: 1.5em;
-
+background-color: #79cf6c;
+  /*background-image: url('../images/intro2/1.png');*/
 }
 
 #page1 section > article:nth-child(2) {
-  background-color: blue;
+
+margin-left: 5em;
+margin-top: 1em;
 margin-bottom: 1em;
-margin-left: 30%;
+background-color: #475993;
 }
 
 #page1 section > article:nth-child(3) {
-  background-color: green;
-margin-top: -1em;
+background-color: #76a9ea;
 }
-
-
 
 #menu_unitegallery {
   display:table; /* TRANSFORMAR A CELDA */
@@ -275,6 +282,9 @@ background-color: rgba(0, 0, 0, 0.8);
 
 }
 
+#pag3 {
+}
+
 @font-face {
     font-family: 'LithosPro'; /*a name to be used later*/
     src: url('../font/LithosPro-Black.ttf'); /*URL to font*/
@@ -288,6 +298,11 @@ background-color: rgba(0, 0, 0, 0.8);
 @font-face {
     font-family: 'EstrangeloEdessa'; /*a name to be used later*/
     src: url('../font/estre.ttf'); /*URL to font*/
+}
+
+@font-face {
+    font-family: 'OldNewspaperTypes'; /*a name to be used later*/
+    src: url('../font/OldNewspaperTypes.ttf'); /*URL to font*/
 }
 
 #intro2 > div {
@@ -347,6 +362,11 @@ i {
 
 
 @media (max-width: 767px) { /* PARA MOVIL */
+
+  #page1 section > article:nth-child(2) {
+  margin-left: 0%;
+
+  }
 
   #main-menu ul > li:hover {
   background-color: inherit;
