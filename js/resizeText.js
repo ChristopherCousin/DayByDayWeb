@@ -15,6 +15,7 @@ var resizeText = function () {
       //  $("#menu_unitegallery").css("font-size", '50%');
         $("#menu_unitegallery").css("font-size", nuevoTamanoFuente / 2 + '%');
           $("#page1 section > article ").css("font-size", nuevoTamanoFuente / 2 + '%');
+          $(".container ").css("font-size", nuevoTamanoFuente / 2.5 + '%');
       };
 
       $(document).ready(function() {
