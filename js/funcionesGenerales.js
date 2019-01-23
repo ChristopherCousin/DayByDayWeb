@@ -117,6 +117,7 @@ $(document).ready(function() {
                 $(".transparenteTexto div").removeClass("fadeout").addClass("fadein");
           else if ($(".transparenteTexto div").hasClass("fadein"))
                 $(".transparenteTexto div").removeClass("fadein").addClass("fadeout");
+                $("#menu li").removeClass("uvnbesf").addClass("uvnbesf2");
         });
 
 
