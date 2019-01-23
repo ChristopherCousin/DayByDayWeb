@@ -28,7 +28,7 @@ var Dimensiones=function(){
 
   $(".pag2").css({ // ESTABLECER NUEVAS DIMENSIONES
     'width':w + 'px',
-    'height':h + 'px',
+    'min-height':hWelcome + 'px',
   });
 
   $(".imgs-grid").css({ // ESTABLECER NUEVAS DIMENSIONES
@@ -120,7 +120,7 @@ $(document).ready(function() {
                 $("#Fader").removeClass("fadein").addClass("fadeout");
         });
 
-        
+
 });
 
 //SE EJECUTA UNA VEZ CARGADA LA PÁGINA COMPLETAMENTE

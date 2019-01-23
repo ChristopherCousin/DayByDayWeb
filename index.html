@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="css/images-grid.css">
 		<link rel="stylesheet" type="text/css" href="css/demo.css" />
 		<link rel="stylesheet" type="text/css" href="css/component.css" />
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400' rel='stylesheet' type='text/css'>
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery-ui-1.9.2.custom.js"></script>
     <script type="text/javascript" src="js/funcionesGenerales.js" ></script> <!-- GENERAL SCRIPTS -->
@@ -89,9 +90,6 @@ hideContentDivs();
                   <a href="#FAQ"><span data-hover="FAQ">FAQ</span></a>
                 </li>
                 <li>
-                  <a href="#contact"><span data-hover="Contacto">Contacto</span></a>
-                </li>
-                <li>
                   <a href="#inicio" id="header__icon" class="header__icon">&#9776;</a> <!-- COLLAPSE MENU -->
                 </li>
             </ul>
@@ -113,10 +111,6 @@ hideContentDivs();
          <span>Day</span><span>By</span><span>Day</span>
        </div>
 
-
-
-
-
      <aside id="network">
          <ul>
            <li><img src="images/network/whatsapp.png" alt="whatsapp"></li>
@@ -136,21 +130,32 @@ hideContentDivs();
 
           <nav class="cl-effect-1">
       <ul id="menu">
-        <li id="link1"><a href="#asdd">¿Qué utilidades tiene?</a></li>
+        <li id="link1"><a href="#asdd">Contacto</a></li>
         <li id="link2"><a href="#asdd">¿Por qué lo usamos?</a></li>
       </ul>
     </nav>
   </nav>
   <section class="transparenteTexto">
             <div id="page1" class="contentb">
-              <section>
-                <article>
-                  <img src="images/downloadandroid.png">
-                  <p>Texto asdasda dsaf sdasda assdads ds</p>
-                </article>
-                <article>test2</article>
-                <article>test3</article>
-              </section>
+    <form action="/action_page.php" class="container">
+      <label for="fname">First Name</label>
+      <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+      <label for="lname">Last Name</label>
+      <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+      <label for="country">Country</label>
+      <select id="country" name="country">
+        <option value="australia">Australia</option>
+        <option value="canada">Canada</option>
+        <option value="usa">USA</option>
+      </select>
+
+      <label for="subject">Subject</label>
+      <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+      <input type="submit" value="Submit">
+    </form>
             </div>
             <div id="page2" class="contentb">
             <h1>¿Por qué lo usamos?</h1>
@@ -158,9 +163,6 @@ hideContentDivs();
             </div>
   </section>
   </div>
-  <section>
-          <article id="gallery7"></article>
-        </section>
 
 <!--
   <section id="download" >
@@ -174,6 +176,9 @@ hideContentDivs();
 </div>
 <div class="pag3">
 
+  <section>
+          <article id="gallery7"></article>
+        </section>
 </div>
 <!--<div class="pag3"> <!-- fit web height and width --
     <section id="acercade">
