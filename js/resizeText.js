@@ -9,7 +9,7 @@ var resizeText = function () {
         $("#transparente").css("background-size", nuevoTamanoFuente - '%');
         $("#intro-text span").css("font-size", nuevoTamanoFuente*1.5 + '%');
         $("#intro-text h3").css("font-size", nuevoTamanoFuente  + '%');
-          $("#intro-text h3").css("font-size", nuevoTamanoFuente  + '%');
+        $("#intro-text h3").css("font-size", nuevoTamanoFuente  + '%');
         $("#main-menu li:not(:last-child)").css("font-size", nuevoTamanoFuente / 2 + '%');
         $(".phone").css("font-size", nuevoTamanoFuente / 2 + '%');
       //  $("#menu_unitegallery").css("font-size", '50%');
