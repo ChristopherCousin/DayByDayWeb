@@ -14,10 +14,10 @@ body{
 }
 .pag2 {
 
+  background-image: url('../images/intro2/fondo.png');
   border-bottom: 1px;
   border-color: white;
   border-style: solid;
-  background-image: url('../images/intro2/fondo.png');
 }
 
 #gallery7 {
@@ -67,11 +67,12 @@ input[type=submit]:hover {
   border-radius: 5px;
   padding: 20px;
   text-align: left;
-  background-color: rgba(175, 175, 175, 0.5);
+  background-color: rgba(175, 175, 175, 0.8);
 
 font-family: 'Muli', sans-serif;
   text-transform: uppercase;
     font-weight: bold;
+    color:#000;
 }
 
 .vid {
@@ -218,12 +219,20 @@ padding-bottom: 1em;
 }
 
 #page1 {
+
   color:black;
   text-align: center;
 font-family: 'OldNewspaperTypes';
   text-transform: uppercase;
 }
 
+.fadein {
+}
+
+.fadeout {
+
+    display: none;
+}
 
 
 #page1 section > article {

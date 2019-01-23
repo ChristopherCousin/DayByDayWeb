@@ -110,14 +110,13 @@ $(document).ready(function() {
               var tmp_div = $(this).parent().index();
               $('.transparenteTexto div').eq(tmp_div).show();
         });
-        $('.transparenteTexto div').hide();
 
 
-        $("#Trigger2").click(function () {
-            if ($("#Fader").hasClass("fadeout"))
-                $("#Fader").removeClass("fadeout").addClass("fadein");
-            else
-                $("#Fader").removeClass("fadein").addClass("fadeout");
+        $("#menu a").click(function () {
+            if ($(".transparenteTexto div").hasClass("fadeout"))
+                $(".transparenteTexto div").removeClass("fadeout").addClass("fadein");
+          else if ($(".transparenteTexto div").hasClass("fadein"))
+                $(".transparenteTexto div").removeClass("fadein").addClass("fadeout");
         });
 
 
