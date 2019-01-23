@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="css/images-grid.css">
 		<link rel="stylesheet" type="text/css" href="css/demo.css" />
 		<link rel="stylesheet" type="text/css" href="css/component.css" />
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400' rel='stylesheet' type='text/css'>
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery-ui-1.9.2.custom.js"></script>
     <script type="text/javascript" src="js/funcionesGenerales.js" ></script> <!-- GENERAL SCRIPTS -->
@@ -110,10 +111,6 @@ hideContentDivs();
          <span>Day</span><span>By</span><span>Day</span>
        </div>
 
-
-
-
-
      <aside id="network">
          <ul>
            <li><img src="images/network/whatsapp.png" alt="whatsapp"></li>
@@ -133,31 +130,28 @@ hideContentDivs();
 
           <nav class="cl-effect-1">
       <ul id="menu">
-        <li id="link1"><a href="#asdd">¿Qué utilidades tiene?</a></li>
+        <li id="link1"><a href="#asdd">Contacto</a></li>
         <li id="link2"><a href="#asdd">¿Por qué lo usamos?</a></li>
       </ul>
     </nav>
   </nav>
   <section class="transparenteTexto">
             <div id="page1" class="contentb">
-              <section>
-                <article>
-                    <h1>Titulo</h1>
+              <form action="php/envia.php" method="post" class="form-consulta">
+            		<label>Nombre y apellido: <span>*</span>
+            			<input type="text" name="nombre" placeholder="Nombre y apellido" class="campo-form" required>
+            		</label>
 
-                  <p>Texto asdasda dsaf sdasda assdads ds</p>
+            		<label>Email: <span>*</span>
+            			<input type="email" name="email" placeholder="Email" class="campo-form" required>
+            		</label>
 
-                </article>
-                <article>
-  <h1>Titulo</h1>
-                  <p>Texto asdasda dsaf sdasda assdads ds</p>
+            		<label>Consulta:
+            			<textarea name="consulta" class="campo-form"></textarea>
+            		</label>
 
-                </article>
-                <article>
-  <h1>Titulo</h1>
-                  <p>Texto asdasda dsaf sdasda assdads ds</p>
-
-                </article>
-              </section>
+            		<input type="submit" value="Enviar" class="btn-form">
+            	</form>
             </div>
             <div id="page2" class="contentb">
             <h1>¿Por qué lo usamos?</h1>
