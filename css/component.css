@@ -28,8 +28,8 @@ nav a:focus {
 }
 
 /* Effect 1: Brackets */
-.cl-effect-1 a::before,
-.cl-effect-1 a::after {
+.tumadre2 a::before,
+.tumadre2 a::after {
 	display: inline-block;
 	opacity: 0;
 	-webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
@@ -46,6 +46,25 @@ nav a:focus {
 }
 
 .cl-effect-1 a::after {
+	margin-left: 10px;
+	content: ']';
+	-webkit-transform: translateX(-20px);
+	-moz-transform: translateX(-20px);
+	transform: translateX(-20px);
+}
+
+
+
+
+.tumadre a::before {
+	margin-right: 10px;
+	content: '[';
+	-webkit-transform: translateX(20px);
+	-moz-transform: translateX(20px);
+	transform: translateX(20px);
+}
+
+.tumadre a::after {
 	margin-left: 10px;
 	content: ']';
 	-webkit-transform: translateX(-20px);

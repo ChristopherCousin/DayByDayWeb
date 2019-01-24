@@ -115,8 +115,17 @@ $(document).ready(function() {
         $("#menu a").click(function () {
             if ($(".transparenteTexto div").hasClass("fadeout"))
                 $(".transparenteTexto div").removeClass("fadeout").addClass("fadein");
+
           else if ($(".transparenteTexto div").hasClass("fadein"))
                 $(".transparenteTexto div").removeClass("fadein").addClass("fadeout");
+
+                if($("#menu li").hasClass("tumadre"))  {
+
+                $("#menu li").removeClass("tumadre").addClass("tumadre2");
+              }
+                else {
+                  $("#menu li").removeClass("tumadre2").addClass("tumadre");
+                }
         });
 
 
