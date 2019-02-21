@@ -20,7 +20,7 @@ var Dimensiones=function(){
     var wWelcome = w / 2;
 
     var wPhone = w / 2;
-  var hPhone = h / 2;
+    var hPhone = h / 2;
   $("#intro2").css({ // ESTABLECER NUEVAS DIMENSIONES
     'width':w + 'px',
     'height':hWelcome + 'px',
@@ -181,10 +181,9 @@ $(".transparenteTexto").css({ // ESCONDER TEXTO
 */
 }
 
-document.getElementById("prueba").innerHTML = docHeight;
 
-
-if (scroll < scroll2 && scrollPercentRounded < 15) { //En caso que la posicion del scroll sea menor al tamaño de la pantalla
+if (scroll < scroll2 && scrollPercentRounded < 15)
+{ //En caso que la posicion del scroll sea menor al tamaño de la pantalla
 
   $("#intro-text span:first-of-type").css({
     'margin-right':scrollPercentRounded + '%'
