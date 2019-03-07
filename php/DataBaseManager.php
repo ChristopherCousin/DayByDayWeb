@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(isset($_POST))
+if(isset($_POST) && isset($_POST["username"]) )
 {
  login($_POST["username"], $_POST["password"]);
 }
@@ -28,11 +28,34 @@ if(isset($_POST))
         } else {
           $_SESSION["Login"]=false;
         }
-        /*while($row = $stmt->fetch(PDO::FETCH_OBJ))
-        {
-          echo "user: " . $row->username . "<br>";
-          echo "pass: " . $row->password . "<br>";
-        }*/
   }
+
+  function addImage($name, $extension, $version, $path)
+  {
+    include ("config.php");
+        // Prepare
+        $stmt = $dbh->prepare("INSERT INTO file(name,extension,version,link)
+        values(?,?,?,?)");
+        $stmt->bindParam(1, $name);
+        $stmt->bindParam(2, $extension);
+        $stmt->bindParam(3, $version);
+        $stmt->bindParam(4, $path);
+
+        // Excecute
+      if($stmt->execute()){
+        echo "added";
+      }
+  }
+
+  function md5encryptName() {
+    $s = strtoupper(md5(uniqid(rand(),true)));
+    $guidText =
+        substr($s,0,8) . '-' .
+        substr($s,8,4) . '-' .
+        substr($s,12,4). '-' .
+        substr($s,16,4). '-' .
+        substr($s,20);
+    return $guidText;
+}
 
 ?>
