@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -18,7 +21,7 @@
 	  <link rel="stylesheet" type="text/css" href="css/demo.css" />
   	<link rel="stylesheet" type="text/css" href="css/component.css" />
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400' rel='stylesheet' type='text/css'>
-    
+
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery-ui-1.9.2.custom.js"></script>
     <script src="js/funcionesGenerales.js" ></script> <!-- GENERAL SCRIPTS -->
@@ -178,11 +181,17 @@ hideContentDivs();
 <div class="pag3">
   <section>
   <h2>Gallery</h2>
-  <form action = "php/upload.php" method = "post" enctype = "multipart/form-data">
-      Select image to upload:
-      <input type="file"   name="fileToUpload"  id="fileToUpload">
-      <input type="submit" value="Upload Image" name="submit">
-  </form>
+  <?php if(isset ($_SESSION["Login"]))
+  {
+    if($_SESSION["Login"])
+    {
+      echo '<form action = "php/upload.php" method = "post" enctype = "multipart/form-data">
+        Select image to upload:
+        <input type="file"   name="fileToUpload"  id="fileToUpload">
+        <input type="submit" value="Upload Image" name="submit">
+    </form>';
+    }
+} ?>
   <article id="gallery7"></article>
   </section>
 </div>

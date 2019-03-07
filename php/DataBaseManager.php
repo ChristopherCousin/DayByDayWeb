@@ -1,16 +1,38 @@
 <?php
-   include("config.php");
+session_start();
+if(isset($_POST))
+{
+ login($_POST["username"], $_POST["password"]);
+}
 
-   function test($user, $password)
-   {
-     $stmt = $pdo->prepare('SELECT * FROM users WHERE user = ? AND password=?');
-     $stmt->execute([$user, $password]);
-     $user = $stmt->fetch();
 
-     foreach ($stmt as $row)
-     {
-        return $row['user'] . "\n";
-     }
+  function login($user, $password2)
+  {
+    $URL1 = "../index.php";
+    include ("config.php");
+        // Prepare
+        $stmt = $dbh->prepare("SELECT * FROM users WHERE username = ? AND password=?");
 
-   }
+        $stmt->bindParam(1, $user);
+        $stmt->bindParam(2, $password2);
+
+        // Excecute
+        $stmt->execute();
+
+        $result = $stmt->fetchColumn();
+
+        if ($result > 0)
+        {
+          $_SESSION["Login"]=true;
+          header('Location: '.$URL1);
+        } else {
+          $_SESSION["Login"]=false;
+        }
+        /*while($row = $stmt->fetch(PDO::FETCH_OBJ))
+        {
+          echo "user: " . $row->username . "<br>";
+          echo "pass: " . $row->password . "<br>";
+        }*/
+  }
+
 ?>
