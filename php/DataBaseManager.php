@@ -1,33 +1,16 @@
 <?php
    include("config.php");
-   /*
-   function addImageLog($name, $link)
+
+   function test($user, $password)
    {
-     foreach($mbd->query('SELECT * from FOO') as $fila) {
-       print_r($fila);
+     $stmt = $pdo->prepare('SELECT * FROM users WHERE user = ? AND password=?');
+     $stmt->execute([$user, $password]);
+     $user = $stmt->fetch();
+
+     foreach ($stmt as $row)
+     {
+        return $row['user'] . "\n";
+     }
+
    }
-   }
-
-/*
-function addImageLog($name, $link)
-{
-
-  mysqli_real_escape_string($name);
-  mysqli_real_escape_string($link);
-
-  $sql = "SELECT * FROM users WHERE username = '$myusername' and password = '$mypassword'";
-  $result = mysqli_query($db,$sql);
-  $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-
-  $count = mysqli_num_rows($result);
-
-  // If result matched $myusername and $mypassword, table row must be 1 row
-
-  if($count == 1) {
-     header('Location: '.$URL1);
-  }else {
-     header('Location: '.$URL2);
-  }
-}
-*/
 ?>
