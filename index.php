@@ -27,7 +27,7 @@ session_start();
     <script src="js/funcionesGenerales.js" ></script> <!-- GENERAL SCRIPTS -->
     <script src="js/resizeText.js" ></script> <!-- FOR RESPONSIVE DESIGN -->
     <script src="js/jquery-inertiaScroll.js"></script> <!-- smooth -->
-    <script src="js/rueda.js"></script>
+    <!--<script src="js/rueda.js"></script>-->
     <script src="js/images-grid.js"></script>
     <script src="js/modernizr.custom.js"></script>
     <script>
@@ -45,34 +45,18 @@ function hideContentDivs(){
 hideContentDivs();
 </script>
 <?php
-$todo = "";
-$i = 0;
 $files = glob("images/galeria/*.jpg");
+$images = [];
 $numItems = count($files);
-  foreach (glob('images/galeria/*.jpg') as $filename) {
-    if(++$i === $numItems)
-    {
-          $todo .= "'".$filename."'";
-    } else {
-          $todo .= "'".$filename."'".", ";
-    }
+  foreach (glob('uploads/*.png') as $filename) {
+    array_push($images, $filename);
   }
   ?>
+
+
 <script>
 
-var images2 = "<?php echo $todo; ?>";
-
-
-          var images = ['images/galeria/1.jpg',
-        'images/galeria/2.jpg',
-        'images/galeria/3.jpg',
-        'images/galeria/4.jpg',
-        'images/galeria/5.jpg',
-        'images/galeria/6.jpg'];
-
-
-
-
+var images = <?php echo json_encode($images); ?>;
 
           $(function() {
               $('#gallery7').imagesGrid({
@@ -200,21 +184,19 @@ var images2 = "<?php echo $todo; ?>";
 </div>
 <div class="pag3">
   <section>
-  <h2>Gallery</h2>
   <?php if(isset ($_SESSION["Login"]))
   {
     if($_SESSION["Login"])
     {
-      echo '<form action = "php/upload.php" method = "post" enctype = "multipart/form-data">
+      echo '<h2>Gallery</h2>
+      <form action = "php/upload.php" method = "post" enctype = "multipart/form-data">
         Select image to upload:
         <input type="file"   name="fileToUpload"  id="fileToUpload">
         <input type="submit" value="Upload Image" name="submit">
-    </form>';
+      </form>
+      <article id="gallery7"></article>';
     }
-
-
 } ?>
-  <article id="gallery7"></article>
   </section>
 </div>
 <!--<div class="pag3"> fit web height and width

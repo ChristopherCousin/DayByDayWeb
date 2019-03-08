@@ -119,14 +119,13 @@ background-color: black;
 
 #content {
   margin-top: -3em;
+
 }
 
 #divHeader { /* CONTIENE EL LOGO Y MENU PRINCIPAL - main-header & main-menu */
   display:table; /* CREAMOS UNA TABLA */
   width: 100%;
   height: 6em;
-  border-bottom: solid #fff;
-  border-width: 0 1px 1px 0;
 
 }
 
@@ -144,6 +143,7 @@ border-width: 0 1px 1px 0;
   display:table-cell; /* TRANSFORMAR A CELDA */
   height: 100%;
   vertical-align: middle; /* CENTRAR EN VERTICALMENTE EN LA CELDA */
+
 }
 
 #main-menu ul {
@@ -153,7 +153,7 @@ border-width: 0 1px 1px 0;
   table-layout: fixed; /* MISMA ANCHURA EN LI */
   text-transform: uppercase;
   font-family: 'Muli', sans-serif;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   color: #fff;
 }
 
