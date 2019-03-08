@@ -182,6 +182,7 @@ var images = <?php echo json_encode($images); ?>;
 </div>
 -->
 </div>
+
 <div class="pag3">
   <section>
   <?php if(isset ($_SESSION["Login"]))
@@ -199,6 +200,7 @@ var images = <?php echo json_encode($images); ?>;
 } ?>
   </section>
 </div>
+
 <!--<div class="pag3"> fit web height and width
     <section id="acercade">
     </section>
