@@ -52,16 +52,15 @@ $numItems = count($files);
   foreach (glob('images/galeria/*.jpg') as $filename) {
     if(++$i === $numItems)
     {
-          $todo .= $filename;
+          $todo .= "'".$filename."'";
     } else {
-          $todo .= $filename.",";
+          $todo .= "'".$filename."'".", ";
     }
   }
-echo $todo;
   ?>
 <script>
 
-var asd = "<?php echo $todo; ?>";
+var images2 = "<?php echo $todo; ?>";
 
 
           var images = ['images/galeria/1.jpg',
@@ -70,6 +69,9 @@ var asd = "<?php echo $todo; ?>";
         'images/galeria/4.jpg',
         'images/galeria/5.jpg',
         'images/galeria/6.jpg'];
+
+
+
 
 
           $(function() {
@@ -81,7 +83,7 @@ var asd = "<?php echo $todo; ?>";
 
           });
 
-      </script>
+</script>
 </head>
 <body>
 
