@@ -30,7 +30,7 @@ if(isset($_POST) && isset($_POST["username"]) )
         }
   }
 
-  function addImage($name, $extension, $version, $path)
+  function addImageToDB($name, $extension, $version, $path)
   {
     include ("config.php");
         // Prepare
@@ -57,5 +57,6 @@ if(isset($_POST) && isset($_POST["username"]) )
         substr($s,20);
     return $guidText;
 }
+
 
 ?>

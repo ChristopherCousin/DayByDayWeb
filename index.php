@@ -44,8 +44,25 @@ function hideContentDivs(){
 }
 hideContentDivs();
 </script>
-
+<?php
+$todo = "";
+$i = 0;
+$files = glob("images/galeria/*.jpg");
+$numItems = count($files);
+  foreach (glob('images/galeria/*.jpg') as $filename) {
+    if(++$i === $numItems)
+    {
+          $todo .= $filename;
+    } else {
+          $todo .= $filename.",";
+    }
+  }
+echo $todo;
+  ?>
 <script>
+
+var asd = "<?php echo $todo; ?>";
+
 
           var images = ['images/galeria/1.jpg',
         'images/galeria/2.jpg',
@@ -53,6 +70,7 @@ hideContentDivs();
         'images/galeria/4.jpg',
         'images/galeria/5.jpg',
         'images/galeria/6.jpg'];
+
 
           $(function() {
               $('#gallery7').imagesGrid({
@@ -70,7 +88,7 @@ hideContentDivs();
 <div class="pag1"> <!-- fit web height and width -->
     <div id="divHeader"> <!-- Div del menu principal -->
         <header id="main-header">
-              <a href="/" title="Vuelve a la página de inicio" id="logo">
+              <a href="/" title="Vuelve a la página de inicio" id="logginato">
                 <img src="images/logo.png" alt="Day By Day logo" />
               </a><!-- Logo completo: PNG // background-color: #ececec; border right solid 1px #bdb7aa; -->
         </header>
@@ -191,6 +209,8 @@ hideContentDivs();
         <input type="submit" value="Upload Image" name="submit">
     </form>';
     }
+
+
 } ?>
   <article id="gallery7"></article>
   </section>

@@ -9,7 +9,10 @@ $newFileName;
 $finalPathFile;
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
+  echo $newFileName = md5encryptName().".".$imageFileType;
+
     $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+
     if($check !== false) {
         echo "File is an image - " . $check["mime"] . ".";
         $uploadOk = 1;
@@ -43,9 +46,10 @@ if ($uploadOk == 0) {
 } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
-        echo $newFileName = md5encryptName().".".$imageFileType;
         $finalPathFile = $target_dir.$newFileName;
-        echo addImage($newFileName, $imageFileType, 1, $finalPathFile);
+        echo addImageToDB($newFileName, $imageFileType, 1, $finalPathFile);
+        rename($target_file, $finalPathFile);
+        header('Location: '."../index.php");
     } else {
         echo "Sorry, there was an error uploading your file.";
     }
