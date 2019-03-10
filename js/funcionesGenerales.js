@@ -31,6 +31,11 @@ var Dimensiones=function(){
     'min-height':hWelcome + 'px',
   });
 
+  $(".pag3").css({ // ESTABLECER NUEVAS DIMENSIONES
+    'width':w + 'px',
+    'min-height':hWelcome + 'px',
+  });
+
   $(".imgs-grid").css({ // ESTABLECER NUEVAS DIMENSIONES
     'max-width':w + 'px',
   });

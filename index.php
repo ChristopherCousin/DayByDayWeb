@@ -14,14 +14,17 @@ session_start();
                   maximum-scale=1">
     <title>Day By Day</title>
     <link rel="icon" href="fav_icon.png">
+        <link rel="stylesheet" href="css/estilo.css">
+
+            <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/reset.css"> <!-- Resetear todos los parametros de CSS para cargar los nuestros desde el inicio -->
-    <link rel="stylesheet" href="css/estilo.css">
+
     <link rel="stylesheet" href="css/jquery-ui.css">
     <link rel="stylesheet" href="css/images-grid.css">
 	  <link rel="stylesheet" type="text/css" href="css/demo.css" />
   	<link rel="stylesheet" type="text/css" href="css/component.css" />
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400' rel='stylesheet' type='text/css'>
-
+    <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery-ui-1.9.2.custom.js"></script>
     <script src="js/funcionesGenerales.js" ></script> <!-- GENERAL SCRIPTS -->
@@ -92,10 +95,10 @@ var images = <?php echo json_encode($images); ?>;
                   <a href="#descargar"><span data-hover="Descargar">Descargar</span></a>
                 </li>
                 <li>
-                  <a href="#features"><span data-hover="Funciones">Funciones</span></a>
+                  <a href="#funcionesID"><span data-hover="Funciones">Funciones</span></a>
                 </li>
                 <li>
-                  <a href="#FAQ"><span data-hover="FAQ">FAQ</span></a>
+                  <a href="login.php"><span data-hover="FAQ">LOGIN</span></a>
                 </li>
                 <li>
                   <a href="#inicio" id="header__icon" class="header__icon">&#9776;</a> <!-- COLLAPSE MENU -->
@@ -183,7 +186,142 @@ var images = <?php echo json_encode($images); ?>;
 -->
 </div>
 
-<div class="pag3">
+<div id="funcionesID" class="pag3">
+  <div class="testasd">
+<div class="funciones">
+  <section class ="funciones-0">
+      <div class="container2">
+        <div class="row">
+          <div class="col-md-12 funciones-0-titulo text-center">
+            <h2 style="font-weight: bold">Automation at your service</h2>
+          </div>
+          <div class="col-md-4 text-center">
+            <div >
+              <img src="images/location.png" alt="">
+            </div>
+            <h2>Room-level Location</h2>
+            <div class="detail">
+              <p>
+                Thanks to brand new indoors location algorithms, Smarter Time can detect where you are at room-level precision by using surrounding Wi-Fi networks.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4 text-center">
+            <div>
+              <img src="images/learning.png" alt="">
+            </div>
+            <h2>Learning Capabilities</h2>
+            <div class="detail">
+              <p>
+                Smarter Time relies on a state-of-the art intelligent brain to remember everything you tell it, learn and serve you better day after day.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4 text-center">
+            <div>
+              <img src="images/tracking.png" alt="">
+            </div>
+            <h2>Apps and calls tracking</h2>
+            <div class="detail">
+              <p>
+                Smarter Time gathers automatically all the reliable data sources, such as the apps you use, the calls you take or the readings of your phone’s sensors.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class ="funciones-1">
+    <div class="container2">
+      <div class="row">
+
+        <div class="col-md-12 funciones-1-titulo text-center ">
+          <h2 style="font-weight: bold">Analytics for every need</h2>
+        </div>
+        <div class="col-md-4 text-center">
+          <div>
+            <img src="images/analitic.png" alt="">
+          </div>
+          <h2>Analytics Panel</h2>
+          <div class="detail">
+            <p>
+              Want to see your time use breakdown at a glance? In the analytics panel, you’ll find details by activities, categories and different time periods.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4 text-center">
+          <div>
+            <img src="images/goals.png" alt="">
+          </div>
+          <h2>Goals and Maps</h2>
+          <div class="detail-p">
+            <p>
+              If you’re interested in keeping track of your movements, or want that extra push of motivation, Smarter Time offers a map display and a goals system.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4 section-heading-division section-heading section-heading-home text-center">
+          <div class="blank-section blank-section-image">
+            <img src="images/report.png" alt="">
+          </div>
+          <h2>Weekly Report</h2>
+          <div class="detail-p">
+            <p>
+              Details are important, but so is the big picture. With Smarter Time you’ll get a report highlighting the most important information of the week.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <section class="funciones-2">
+    <div class="container2">
+      <div class="row">
+        <div class="col-md-12 funciones-2-titulo text-center ">
+          <h2 style="font-weight: bold;">Integrated multi-platform system</h2>
+        </div>
+        <div class="col-md-4 text-center">
+          <div>
+            <img src="images/desktop.png" alt="">
+          </div>
+          <h2>Desktop Client</h2>
+          <div class="detail">
+            <p>
+              For the professionals, the freelancers and the technophiles out there, time spent on the computer is paramount. Smarter Time tracks it automatically.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4  text-center">
+          <div>
+            <img src="images/calendar.png" alt="">
+          </div>
+          <h2>Calendar Integration</h2>
+          <div class="detail">
+            <p>
+              Smarter Time can read the activities you schedule in your calendar and use them to guess where you are and what you’re doing.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4 text-center">
+          <div>
+            <img src="images/ios.png" alt="">
+          </div>
+          <h2>Coming Soon to iOS</h2>
+          <div class="detail">
+            <p>
+              Although Smarter Time is only available on Android for now, an iOS version is in the works and the Beta is coming soon, so if you’re an Apple fan, stay tuned!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</div>
+</div>
+<div class="pag4">
   <section>
   <?php if(isset ($_SESSION["Login"]))
   {

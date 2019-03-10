@@ -427,6 +427,36 @@ i {
 }
 
 
+
+/*pag3*/
+
+.funciones-0 {
+  margin: 5em;
+  font-family:"proxima-nova";
+}
+.funciones-1 {
+  margin: 10em;
+  font-family:"proxima-nova";
+}
+.funciones-2 {
+  margin: 10em;
+  font-family:"proxima-nova";
+}
+.funciones-0-titulo{
+  margin-bottom: 4em;
+
+}
+.funciones-1-titulo{
+  margin-bottom: 4em;
+}
+.funciones-2-titulo{
+  margin-bottom: 4em;
+}
+
+/*           */
+
+
+
 @media (max-width: 767px) { /* PARA MOVIL */
 
   #page1 section > article:nth-child(2) {
