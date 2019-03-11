@@ -222,7 +222,7 @@
         this.$element.find('.imgs-grid-image:last .image-wrap').append(
             $('<div>', {
                 class: 'view-all'
-            }).append(
+            }).append (
                 $('<span>', {
                     class: 'view-all-cover',
                 }),

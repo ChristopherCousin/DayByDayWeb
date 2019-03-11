@@ -1,5 +1,5 @@
 <?php
-session_start();
+include ("php/DataBaseManager.php");
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -64,10 +64,9 @@ var images = <?php echo json_encode($images); ?>;
           $(function() {
               $('#gallery7').imagesGrid({
                   images: images,
-                  align: true,
+                  align: false,
                   getViewAllText: function(imgsCount) { return 'Ver todas las imágenes' }
               });
-
           });
 
 </script>
@@ -98,7 +97,7 @@ var images = <?php echo json_encode($images); ?>;
                   <a href="#funcionesID"><span data-hover="Funciones">Funciones</span></a>
                 </li>
                 <li>
-                  <a href="login.php"><span data-hover="FAQ">LOGIN</span></a>
+                  <a href="login.php"><span data-hover="LOGIN">LOGIN</span></a>
                 </li>
                 <li>
                   <a href="#inicio" id="header__icon" class="header__icon">&#9776;</a> <!-- COLLAPSE MENU -->
@@ -189,6 +188,7 @@ var images = <?php echo json_encode($images); ?>;
 <div id="funcionesID" class="pag3">
   <div class="testasd">
 <div class="funciones">
+
   <section class ="funciones-0">
       <div class="container2">
         <div class="row">
@@ -231,6 +231,7 @@ var images = <?php echo json_encode($images); ?>;
         </div>
       </div>
     </section>
+
 
     <section class ="funciones-1">
     <div class="container2">
@@ -321,28 +322,41 @@ var images = <?php echo json_encode($images); ?>;
 </div>
 </div>
 </div>
-<div class="pag4">
+
+<div class="pag214">
   <section>
-  <?php if(isset ($_SESSION["Login"]))
-  {
+  <?php
+   if(isset ($_SESSION["Login"]))
+   {
     if($_SESSION["Login"])
     {
-      echo '<h2>Gallery</h2>
+      echo '
+      <h2>Gallery</h2>
       <form action = "php/upload.php" method = "post" enctype = "multipart/form-data">
         Select image to upload:
         <input type="file"   name="fileToUpload"  id="fileToUpload">
         <input type="submit" value="Upload Image" name="submit">
       </form>
+
       <article id="gallery7"></article>';
     }
 } ?>
   </section>
 </div>
+<?php
+$articleInfo = getArticles();
+echo $articleInfo->title;
+for($x = 0; $x < count($articleInfo) ; $x++)
+{
+  /*echo 'Titulo: '.$articleInfo[0];
+  echo '<br>Descripcion: '.$articleInfo[1];
+  echo '<br>ImagenURL: '.$articleInfo[2];*/
+}
 
+?>
 <!--<div class="pag3"> fit web height and width
     <section id="acercade">
     </section>
 </div>-->
-
 </body>
 </html>

@@ -6,6 +6,12 @@ if(isset($_POST) && isset($_POST["username"]) )
 }
 
 
+class Article {
+    public $title = '';
+    public $description = '';
+    public $imageURL = '';
+}
+
   function login($user, $password2)
   {
     $URL1 = "../index.php";
@@ -58,5 +64,21 @@ if(isset($_POST) && isset($_POST["username"]) )
     return $guidText;
 }
 
+function getArticles()
+{
+  include ("config.php");
+  $article = new Article;
+      // Prepare
+      $stmt = $dbh->prepare("SELECT * FROM articles");
+      // Excecute
+      $stmt->execute();
+
+      while($row = $stmt->fetch(PDO::FETCH_OBJ))
+      {
+        $article->title = $row->title;
+      }
+      return $article;
+
+}
 
 ?>
