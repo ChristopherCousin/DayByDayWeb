@@ -76,6 +76,8 @@ function getArticles()
       while($row = $stmt->fetch(PDO::FETCH_OBJ))
       {
         $article->title = $row->title;
+        $article->title = $row->description;
+        $article->title = $row->imageURL;
       }
       return $article;
 
