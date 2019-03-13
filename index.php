@@ -343,6 +343,7 @@ var images = <?php echo json_encode($images); ?>;
 } ?>
   </section>
 </div>
+
 <?php
 $articles = getArticles();
 echo '  <section class ="funciones-0">

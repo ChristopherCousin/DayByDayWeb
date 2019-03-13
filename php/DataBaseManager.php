@@ -6,12 +6,6 @@ if(isset($_POST) && isset($_POST["username"]) )
 }
 
 
-class Article {
-    public $title = '';
-    public $description = '';
-    public $imageURL = '';
-}
-
   function login($user, $password2)
   {
     $URL1 = "../index.php";
@@ -64,26 +58,37 @@ class Article {
     return $guidText;
 }
 
+
+
+class Article
+{
+  public $title;
+  public $description;
+  public $imageURL;
+       function __construct($title, $description, $imageURL) {
+            $this->title  = $title;
+            $this->description = $description;
+            $this->imageURL = $imageURL;
+       }
+}
+
 function getArticles()
 {
   include ("config.php");
   $articles = array();
-
-      // Prepare
-      $stmt = $dbh->prepare("SELECT * FROM articles");
-      // Excecute
-      $stmt->execute();
-
-      while($row = $stmt->fetch(PDO::FETCH_OBJ))
-      {
-        $article = new Article();
-        $article->title = $row->title;
-        $article->description = $row->description;
-        $article->imageURL = $row->imageURL;
-        array_push($articles, $article);
-      }
-      return $articles;
-
+try
+{
+  $stmt = $dbh->prepare("SELECT * FROM articles");
+  $stmt->execute();
+  while($row = $stmt->fetch(PDO::FETCH_OBJ))
+    {
+      $article = new Article($row->title,$row->description, $row->imageURL);
+      array_push($articles, $article);
+    }
+} catch (Exception $e){
+    echo "Sentimos comunicarle pero ha habido un error, en breves estara solucionado, gracias por su paciencia.";
+}
+    return $articles;
 }
 
 ?>
