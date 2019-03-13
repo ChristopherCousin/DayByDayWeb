@@ -344,15 +344,32 @@ var images = <?php echo json_encode($images); ?>;
   </section>
 </div>
 <?php
-$articleInfo = getArticles();
-echo $articleInfo->title;
-for($x = 0; $x < count($articleInfo) ; $x++)
+$articles = getArticles();
+echo '  <section class ="funciones-0">
+      <div class="container2">
+        <div class="row">
+          <div class="col-md-12 funciones-0-titulo text-center">
+            <h2 style="font-weight: bold">New Stuff</h2>
+          </div>';
+for($x = 0; $x < count($articles) ; $x++)
 {
-  /*echo 'Titulo: '.$articleInfo[0];
-  echo '<br>Descripcion: '.$articleInfo[1];
-  echo '<br>ImagenURL: '.$articleInfo[2];*/
-}
-
+  echo '
+            <div class="col-md-4 text-center">
+              <div>
+                <img src="'.$articles[$x]->imageURL.'" alt="">
+              </div>
+              <h2>'.$articles[$x]->title.'</h2>
+              <div class="detail">
+                <p>
+                  '.$articles[$x]->description.'
+                </p><br><br><br><br>
+              </div>
+            </div>';
+ }
+echo '            </div>
+          </div>
+        </div>
+      </section>';
 ?>
 <!--<div class="pag3"> fit web height and width
     <section id="acercade">

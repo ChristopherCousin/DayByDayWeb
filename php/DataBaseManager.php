@@ -67,7 +67,8 @@ class Article {
 function getArticles()
 {
   include ("config.php");
-  $article = new Article;
+  $articles = array();
+
       // Prepare
       $stmt = $dbh->prepare("SELECT * FROM articles");
       // Excecute
@@ -75,11 +76,13 @@ function getArticles()
 
       while($row = $stmt->fetch(PDO::FETCH_OBJ))
       {
+        $article = new Article();
         $article->title = $row->title;
-        $article->title = $row->description;
-        $article->title = $row->imageURL;
+        $article->description = $row->description;
+        $article->imageURL = $row->imageURL;
+        array_push($articles, $article);
       }
-      return $article;
+      return $articles;
 
 }
 
