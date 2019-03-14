@@ -45,7 +45,25 @@ if(isset($_POST) && isset($_POST["username"]) )
       if($stmt->execute()){
         echo "added";
       }
-  }
+    }
+
+    function addArticle($title, $description, $imageURL)
+    {
+          $isValid = false;
+          include ("config.php");
+          $imageURL = substr($imageURL, 3);
+          // Prepare
+          $stmt = $dbh->prepare("INSERT INTO articles(title,description,imageURL)
+          values(?,?,?)");
+          $stmt->bindParam(1, $title);
+          $stmt->bindParam(2, $description);
+          $stmt->bindParam(3, $imageURL);
+          // Excecute
+        if($stmt->execute()){
+          $isValid = true;
+        }
+        return $isValid;
+      }
 
   function md5encryptName() {
     $s = strtoupper(md5(uniqid(rand(),true)));

@@ -452,7 +452,48 @@ i {
 .funciones-2-titulo{
   margin-bottom: 4em;
 }
+.separador1{
+  height: 5em;
+  background-image: linear-gradient(#2ECCFA, white);
+  margin-bottom: 3em;
+}
+.separador2{
+  height: 2em;
+  margin-top: 4em;
+  background-image: linear-gradient(white, #2ECCFA);
+}
+.separador1 h2{
+text-align: center;
+text-shadow: 2px 2px #fff;
+font-size: 2.5em;
+font-weight: bold;
+}
+.PanelGaleria{
+  margin-left: 2em;
+  margin-right: 2em;
+  font-family:"proxima-nova";
+  font-size: 1.2em;
+  margin-top: 2em;
+}
+.separadorMini {
+  background-color: white;
+}
 
+.controlPanel
+{
+  display: block;
+  margin-bottom: -2em;
+  margin-left: auto;
+  margin-right: auto;
+}
+/*  ----   FIN Visor de imagenes ---- */
+.panelSubirArticulo
+{
+  margin-left: 2em;
+  margin-right: 2em;
+  font-family:"proxima-nova";
+  font-size: 1.2em;
+}
 /*           */
 
 

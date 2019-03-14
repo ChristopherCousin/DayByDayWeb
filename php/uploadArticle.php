@@ -1,41 +1,43 @@
 <?php
 
+
 if(isset($_POST["submit"])) {
 
   include("DataBaseManager.php");
-  $target_dir = "../uploads/";
-  $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+  $target_dir = "../images/articles/";
+  $target_file = $target_dir . basename($_FILES["image"]["name"]);
   $uploadOk = 1;
   $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
   $newURL = "../index.html";
   $newFileName;
   $finalPathFile;
+  $description;
+  $title;
 
-  if(isset($_POST["fileToUpload"]))
-  {
-      $check = getimagesize($_POST["fileToUpload"]["tmp_name"]);
-  } else {
-    echo'<script type="text/javascript"> alert("The file is not an image!");
-    window.location.href="../index.php";</script>';
-    exit();
-  }
+ $title = $_POST["title"];
+ $description = $_POST["description"];
 
+ echo checkPostInputs($title, $description);
+ 
+
+    $check = getimagesize($_FILES["image"]["tmp_name"]);
 
     if($check !== false) {
         echo "File is an image - " . $check["mime"] . ".";
         $uploadOk = 1;
     } else {
-
+        echo "File is not an image.";
         $uploadOk = 0;
     }
 
+  // Check if file already exists
   if (file_exists($target_file))
   {
       echo "Sorry, file already exists.";
       $uploadOk = 0;
   }
   // Check file size
-  if ($_FILES["fileToUpload"]["size"] > 500000)
+  if ($_FILES["image"]["size"] > 500000)
   {
       echo "Sorry, your file is too large.";
       $uploadOk = 0;
@@ -51,18 +53,28 @@ if(isset($_POST["submit"])) {
       echo "Sorry, your file was not uploaded.";
   // if everything is ok, try to upload file
   } else {
-      if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-          echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+      if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+          echo "The file ". basename( $_FILES["image"]["name"]). " has been uploaded.";
           $finalPathFile = $target_dir.$newFileName;
-          echo addImageToDB($newFileName, $imageFileType, 1, $finalPathFile);
+          echo addArticle($title, $description, $finalPathFile);
           rename($target_file, $finalPathFile);
           header('Location: '."../index.php");
       } else {
           echo "Sorry, there was an error uploading your file.";
       }
   }
-} else {
+} else{
   header('Location: '."../index.php");
+}
+
+function checkPostInputs($title, $description)
+{
+  $toReturn = "";
+  if(strlen($title) < 3 || strlen($title) > 20 || strlen($description) < 3 || strlen($description) > 20)
+  {
+    $toReturn = "Minimum of 3 chars and Maximum of 20 chars";
+  }
+  return $toReturn;
 }
 
 ?>

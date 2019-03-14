@@ -331,14 +331,52 @@ var images = <?php echo json_encode($images); ?>;
     if($_SESSION["Login"])
     {
       echo '
-      <h2>Gallery</h2>
+      <img class="controlPanel" src="images/controlPanel.png" height="128" width="128" />
+      <div class="separadorMini"></div>
+      <div class="separador1">
+      <br>
+        <h2 id ="1">Control panel</h2>
+      </div>
+      <div class="separadorMini"></div>
+      <div class="PanelGaleria">
+      <span><img src="images/gallery.png" height="60" width="60" /><h2 style="display:inline; padding-left:0.5em;">Personal Gallery</h2></span>
+      <br><br>
       <form action = "php/upload.php" method = "post" enctype = "multipart/form-data">
         Select image to upload:
         <input type="file"   name="fileToUpload"  id="fileToUpload">
         <input type="submit" value="Upload Image" name="submit">
       </form>
-
-      <article id="gallery7"></article>';
+      </div>
+      <br>
+      <br>
+      <article id="gallery7"></article>
+      <br>
+      <br>
+      <br>
+      <br>
+      <section class ="panelSubirArticulo">
+        <span><img src="images/addArticle.png" height="60" width="60" /><h2 style="display:inline; padding-left:0.5em;">Panel for add new articles</h2></span>
+        <br><br>
+        <form action = "php/uploadArticle.php" method = "post" enctype = "multipart/form-data">
+        <div class="form-group">
+          Title:<br>
+          <input type="text" name="title" value=""><br>
+          Description:<br>
+          <textarea name="description" cols="40" rows="5"></textarea>
+          </div>
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" name="image" lang="es">
+            <label class="custom-file-label" for="customFileLang">Seleccionar Imagen</label>
+          </div>
+          <br><br><input type="submit" value="Upload Article" name="submit">
+        </form>
+      </section>
+      <div class="separador2">
+      <div class="separadorMini"></div>
+      <br>
+      </div>
+      <div class="separadorMini"></div>'
+      ;
     }
 } ?>
   </section>
