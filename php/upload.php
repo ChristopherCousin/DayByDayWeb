@@ -11,9 +11,11 @@ if(isset($_POST["submit"])) {
   $newFileName;
   $finalPathFile;
 
-  if(isset($_POST["fileToUpload"]))
+  echo $newFileName = md5encryptName().".".$imageFileType;
+
+  if(isset($_FILES["fileToUpload"]["tmp_name"]))
   {
-      $check = getimagesize($_POST["fileToUpload"]["tmp_name"]);
+      $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
   } else {
     echo'<script type="text/javascript"> alert("The file is not an image!");
     window.location.href="../index.php";</script>';

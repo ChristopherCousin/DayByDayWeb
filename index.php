@@ -343,7 +343,7 @@ var images = <?php echo json_encode($images); ?>;
       <br><br>
       <form action = "php/upload.php" method = "post" enctype = "multipart/form-data">
         Select image to upload:
-        <input type="file"   name="fileToUpload"  id="fileToUpload">
+        <input type="file" name="fileToUpload">
         <input type="submit" value="Upload Image" name="submit">
       </form>
       </div>

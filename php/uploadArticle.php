@@ -14,13 +14,22 @@ if(isset($_POST["submit"])) {
   $description;
   $title;
 
+
+ echo $newFileName = md5encryptName().".".$imageFileType;
+ 
  $title = $_POST["title"];
  $description = $_POST["description"];
 
  echo checkPostInputs($title, $description);
- 
 
-    $check = getimagesize($_FILES["image"]["tmp_name"]);
+ if(isset($_FILES["image"]["tmp_name"]))
+ {
+     $check = getimagesize($_FILES["image"]["tmp_name"]);
+ } else {
+   echo'<script type="text/javascript"> alert("The file is not an image!");
+   window.location.href="../index.php";</script>';
+   exit();
+ }
 
     if($check !== false) {
         echo "File is an image - " . $check["mime"] . ".";
