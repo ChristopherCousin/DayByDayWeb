@@ -16,9 +16,13 @@
 <!--===============================================================================================-->
 </head>
 <body>
-
 	<div class="limiter">
 		<div class="container-login" style="background-image: url('images/bg-01.jpg');">
+			<form method="get" action="index.php">
+				<button class="login-form-btn2">
+					Back
+				</button>
+			  </form>
 			<div class="wrap-login p-t-30 p-b-50">
 				<span class="login-form-title p-b-41">
 					Login

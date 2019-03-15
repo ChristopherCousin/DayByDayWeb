@@ -27,6 +27,7 @@ if(isset($_POST) && isset($_POST["username"]) )
           header('Location: '.$URL1);
         } else {
           $_SESSION["Login"]=false;
+          header('Location: '."../login.php");
         }
   }
 

@@ -88,10 +88,10 @@ var images = <?php echo json_encode($images); ?>;
             <ul><!-- background-color: #d3cec1; border left dashed #bdb7aa; OMITIR 1º BORDER LI-->
                 <!-- AGRUPAMOS LI EN UNA SOLA FILA PARA QUE INLINE-BLOCK NO CREE ESPACIOS -->
                 <li>
-                  <a class="active" href="#inicio"><span data-hover="Inicio">Inicio</span></a>
+                  <a class="active" href="index.php"><span data-hover="Inicio">Inicio</span></a>
                 </li>
                 <li>
-                  <a href="#descargar"><span data-hover="Descargar">Descargar</span></a>
+                  <a href="descarga.php"><span data-hover="Descargar">Descargar</span></a>
                 </li>
                 <li>
                   <a href="#funcionesID"><span data-hover="Funciones">Funciones</span></a>
