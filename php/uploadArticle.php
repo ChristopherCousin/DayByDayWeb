@@ -1,6 +1,5 @@
 <?php
 
-
 if(isset($_POST["submit"])) {
 
   include("DataBaseManager.php");
@@ -16,7 +15,7 @@ if(isset($_POST["submit"])) {
 
 
  echo $newFileName = md5encryptName().".".$imageFileType;
- 
+
  $title = $_POST["title"];
  $description = $_POST["description"];
 
