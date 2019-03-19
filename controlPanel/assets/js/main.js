@@ -37,7 +37,7 @@ var myDescription = document.querySelector('#description');
 
 
 myForm.addEventListener('submit', function(pEvent) {
-    if(myTitle.value === '' || myTitle.value.length < 4) {
+    if(myTitle.value === '' || myTitle.value.length < 3) {
         pEvent.preventDefault(); //Prevents the form to be sent
         $('#title').css("border-color", "red");
         $('#title').focus();
@@ -50,7 +50,7 @@ myForm.addEventListener('submit', function(pEvent) {
 });
 
 document.querySelector('#title').addEventListener('keypress', function (e) {
-  if(myTitle.value === '' || myTitle.value.length < 4) {
+  if(myTitle.value === '' || myTitle.value.length < 3) {
       $('#title').css("border-color", "red");
   } else {
     $('#title').css("border-color", "green");

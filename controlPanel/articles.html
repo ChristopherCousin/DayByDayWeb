@@ -5,7 +5,7 @@
 	<link rel="icon" type="image/png" href="assets/img/favicon.ico">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<title>Light Bootstrap Dashboard by Creative Tim</title>
+	<title>Articles</title>
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -49,6 +49,12 @@
             </div>
 
             <ul class="nav">
+							<li>
+									<a href="../index.php">
+											<i class="pe-7s-home"></i>
+											<p>Home Page</p>
+									</a>
+							</li>
                 <li>
                     <a href="dashboard.html">
                         <i class="pe-7s-graph"></i>
@@ -56,13 +62,13 @@
                     </a>
                 </li>
                 <li class="active">
-                    <a href="user.html">
-                        <i class="pe-7s-user"></i>
-                        <p>User Profile</p>
+                    <a href="articles.html">
+                        <i class="pe-7s-note"></i>
+                        <p>Articles</p>
                     </a>
                 </li>
 				<li class="active-pro">
-                    <a href="upgrade.html">
+                    <a href="articles.html">
                         <i class="pe-7s-rocket"></i>
                         <p>Control your time</p>
                     </a>
@@ -81,7 +87,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">User</a>
+                    <a class="navbar-brand" href="#">Article</a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-left">
@@ -142,7 +148,7 @@
                               </ul>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="../index.php?data=logout">
                                 <p>Log out</p>
                             </a>
                         </li>
@@ -162,7 +168,7 @@
                                 <h4 class="title">Add Article</h4>
                             </div>
                             <div class="content">
-                                <form action = "../php/uploadArticle.php" method="post" id="myForm">
+                                <form action = "../php/uploadArticle.php" method="post" id="myForm" enctype="multipart/form-data">
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Title</label>
@@ -201,6 +207,22 @@
         </div>
         </div>
 
+				<div class="content2">
+						<div class="container-fluid">
+								<div class="row">
+										<div class="col-md-9">
+												<div class="card">
+														<div class="header">
+																<h4 class="title">Delete Article</h4>
+														</div>
+														<div class="content2">
+
+														</div>
+										</div>
+								</div>
+						</div>
+				</div>
+				</div>
 
         <footer class="footer">
             <div class="container-fluid">

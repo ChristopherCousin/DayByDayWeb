@@ -66,7 +66,8 @@ if(isset($_POST["submit"])) {
           $finalPathFile = $target_dir.$newFileName;
           echo addArticle($title, $description, $finalPathFile);
           rename($target_file, $finalPathFile);
-          header('Location: '."../index.php");
+          echo'<script type="text/javascript"> alert("Your article has been successfully added");
+          window.location.href="../controlPanel/articles.html";</script>';
       } else {
           echo "Sorry, there was an error uploading your file.";
       }

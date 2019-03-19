@@ -1,5 +1,13 @@
 <?php
 include ("php/DataBaseManager.php");
+
+if(isset($_GET["data"]))
+    {
+        if($_GET["data"] == "logout")
+        {
+            $_SESSION["Login"] = false;
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -97,7 +105,14 @@ var images = <?php echo json_encode($images); ?>;
                   <a href="#funcionesID"><span data-hover="Funciones">Funciones</span></a>
                 </li>
                 <li>
-                  <a href="login.php"><span data-hover="LOGIN">LOGIN</span></a>
+                  <?php
+                  if(!$_SESSION["Login"])
+                  {
+                    echo '<a href="login.php"><span data-hover="LOGIN">LOGIN</span></a>';
+                  } else {
+                    echo '<a href="controlPanel/dashboard.html"><span data-hover="PANEL">PANEL</span></a>';
+                  }
+                  ?>
                 </li>
                 <li>
                   <a href="#inicio" id="header__icon" class="header__icon">&#9776;</a> <!-- COLLAPSE MENU -->
@@ -202,7 +217,7 @@ var images = <?php echo json_encode($images); ?>;
             <h2>Room-level Location</h2>
             <div class="detail">
               <p>
-                Thanks to brand new indoors location algorithms, Smarter Time can detect where you are at room-level precision by using surrounding Wi-Fi networks.
+                Thanks to brand new indoors location algorithms, Time can detect where you are at room-level precision by using surrounding Wi-Fi networks.
               </p>
             </div>
           </div>
@@ -213,7 +228,7 @@ var images = <?php echo json_encode($images); ?>;
             <h2>Learning Capabilities</h2>
             <div class="detail">
               <p>
-                Smarter Time relies on a state-of-the art intelligent brain to remember everything you tell it, learn and serve you better day after day.
+                  Time relies on a state-of-the art intelligent brain to remember everything you tell it, learn and serve you better day after day.
               </p>
             </div>
           </div>
@@ -224,7 +239,7 @@ var images = <?php echo json_encode($images); ?>;
             <h2>Apps and calls tracking</h2>
             <div class="detail">
               <p>
-                Smarter Time gathers automatically all the reliable data sources, such as the apps you use, the calls you take or the readings of your phone’s sensors.
+                  Time gathers automatically all the reliable data sources, such as the apps you use, the calls you take or the readings of your phone’s sensors.
               </p>
             </div>
           </div>
@@ -258,7 +273,7 @@ var images = <?php echo json_encode($images); ?>;
           <h2>Goals and Maps</h2>
           <div class="detail-p">
             <p>
-              If you’re interested in keeping track of your movements, or want that extra push of motivation, Smarter Time offers a map display and a goals system.
+              If you’re interested in keeping track of your movements, or want that extra push of motivation,   Time offers a map display and a goals system.
             </p>
           </div>
         </div>
@@ -269,7 +284,7 @@ var images = <?php echo json_encode($images); ?>;
           <h2>Weekly Report</h2>
           <div class="detail-p">
             <p>
-              Details are important, but so is the big picture. With Smarter Time you’ll get a report highlighting the most important information of the week.
+              Details are important, but so is the big picture. With Time you’ll get a report highlighting the most important information of the week.
             </p>
           </div>
         </div>
@@ -290,7 +305,7 @@ var images = <?php echo json_encode($images); ?>;
           <h2>Desktop Client</h2>
           <div class="detail">
             <p>
-              For the professionals, the freelancers and the technophiles out there, time spent on the computer is paramount. Smarter Time tracks it automatically.
+              For the professionals, the freelancers and the technophiles out there, time spent on the computer is paramount. Time tracks it automatically.
             </p>
           </div>
         </div>
@@ -301,7 +316,7 @@ var images = <?php echo json_encode($images); ?>;
           <h2>Calendar Integration</h2>
           <div class="detail">
             <p>
-              Smarter Time can read the activities you schedule in your calendar and use them to guess where you are and what you’re doing.
+              Time can read the activities you schedule in your calendar and use them to guess where you are and what you’re doing.
             </p>
           </div>
         </div>
@@ -312,7 +327,7 @@ var images = <?php echo json_encode($images); ?>;
           <h2>Coming Soon to iOS</h2>
           <div class="detail">
             <p>
-              Although Smarter Time is only available on Android for now, an iOS version is in the works and the Beta is coming soon, so if you’re an Apple fan, stay tuned!
+              Although Time is only available on Android for now, an iOS version is in the works and the Beta is coming soon, so if you’re an Apple fan, stay tuned!
             </p>
           </div>
         </div>
@@ -346,31 +361,6 @@ var images = <?php echo json_encode($images); ?>;
         <input type="file" name="fileToUpload">
         <input type="submit" value="Upload Image" name="submit">
       </form>
-      </div>
-      <br>
-      <br>
-      <article id="gallery7"></article>
-      <br>
-      <br>
-      <br>
-      <br>
-      <section class ="panelSubirArticulo">
-        <span><img src="images/addArticle.png" height="60" width="60" /><h2 style="display:inline; padding-left:0.5em;">Panel for add new articles</h2></span>
-        <br><br>
-        <form action = "php/uploadArticle.php" method = "post" enctype = "multipart/form-data">
-        <div class="form-group">
-          Title:<br>
-          <input type="text" name="title" value=""><br>
-          Description:<br>
-          <textarea name="description" cols="40" rows="5"></textarea>
-          </div>
-          <div class="custom-file">
-            <input type="file" class="custom-file-input" name="image" lang="es">
-            <label class="custom-file-label" for="customFileLang">Seleccionar Imagen</label>
-          </div>
-          <br><br><input type="submit" value="Upload Article" name="submit">
-        </form>
-      </section>
       <div class="separador2">
       <div class="separadorMini"></div>
       <br>
