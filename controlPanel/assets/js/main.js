@@ -34,19 +34,27 @@ $('.image-upload-wrap').bind('dragover', function () {
 var myForm  = document.querySelector('#myForm');
 var myTitle = document.querySelector('#title');
 var myDescription = document.querySelector('#description');
-
+var image = document.querySelector('#image');
 
 myForm.addEventListener('submit', function(pEvent) {
-    if(myTitle.value === '' || myTitle.value.length < 3) {
+    if(myTitle.value === '' || myTitle.value.length < 3 || myTitle.value.length > 15) {
         pEvent.preventDefault(); //Prevents the form to be sent
         $('#title').css("border-color", "red");
         $('#title').focus();
+        alert(image.value);
     }
-    if(myDescription.value === '' || myDescription.value.length < 4) {
-            pEvent.preventDefault(); //Prevents the form to be sent
-            $('#description').css("border-color", "red");
-            $('#description').focus();
-        }
+    if(myDescription.value === '' || myDescription.value.length < 3 || myTitle.value.length > 150) {
+        pEvent.preventDefault(); //Prevents the form to be sent
+        $('#description').css("border-color", "red");
+        $('#description').focus();
+    }
+    if(image.value === '') {
+        pEvent.preventDefault(); //Prevents the form to be sent
+        $('#image').css("border-color", "red");
+        $('#image').focus();
+        alert("image can't be empty");
+    }
+
 });
 
 document.querySelector('#title').addEventListener('keypress', function (e) {
@@ -57,7 +65,7 @@ document.querySelector('#title').addEventListener('keypress', function (e) {
   }
 });
 document.querySelector('#description').addEventListener('keypress', function (e) {
-  if(myDescription.value === '' || myDescription.value.length < 4) {
+  if(myDescription.value === '' || myDescription.value.length < 3) {
       $('#description').css("border-color", "red");
   } else {
     $('#description').css("border-color", "green");

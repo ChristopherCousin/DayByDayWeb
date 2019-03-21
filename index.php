@@ -106,11 +106,16 @@ var images = <?php echo json_encode($images); ?>;
                 </li>
                 <li>
                   <?php
-                  if(!$_SESSION["Login"])
+                  if(isset($_SESSION["Login"]))
                   {
-                    echo '<a href="login.php"><span data-hover="LOGIN">LOGIN</span></a>';
+                    if(!$_SESSION["Login"])
+                    {
+                      echo '<a href="login.php"><span data-hover="LOGIN">LOGIN</span></a>';
+                    } else {
+                      echo '<a href="controlPanel/dashboard.html"><span data-hover="PANEL">PANEL</span></a>';
+                    }
                   } else {
-                    echo '<a href="controlPanel/dashboard.html"><span data-hover="PANEL">PANEL</span></a>';
+                    echo '<a href="login.php"><span data-hover="LOGIN">LOGIN</span></a>';
                   }
                   ?>
                 </li>

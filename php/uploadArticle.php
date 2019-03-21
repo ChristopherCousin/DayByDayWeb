@@ -1,3 +1,6 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+
 <?php
 
 if(isset($_POST["submit"])) {
@@ -66,8 +69,7 @@ if(isset($_POST["submit"])) {
           $finalPathFile = $target_dir.$newFileName;
           echo addArticle($title, $description, $finalPathFile);
           rename($target_file, $finalPathFile);
-          echo'<script type="text/javascript"> alert("Your article has been successfully added");
-          window.location.href="../controlPanel/articles.html";</script>';
+          echo '<script> window.location.href="../controlPanel/articles.php?data=succesarticle";</script>';
       } else {
           echo "Sorry, there was an error uploading your file.";
       }

@@ -81,10 +81,12 @@ if(isset($_POST) && isset($_POST["username"]) )
 
 class Article
 {
+  public $id;
   public $title;
   public $description;
   public $imageURL;
-       function __construct($title, $description, $imageURL) {
+       function __construct($id, $title, $description, $imageURL) {
+            $this->id  = $id;
             $this->title  = $title;
             $this->description = $description;
             $this->imageURL = $imageURL;
@@ -101,13 +103,34 @@ try
   $stmt->execute();
   while($row = $stmt->fetch(PDO::FETCH_OBJ))
     {
-      $article = new Article($row->title,$row->description, $row->imageURL);
+      $article = new Article($row->id, $row->title, $row->description, $row->imageURL);
       array_push($articles, $article);
     }
 } catch (Exception $e){
     echo "Sentimos comunicarle pero ha habido un error, en breves estara solucionado, gracias por su paciencia.";
 }
     return $articles;
+}
+
+function removeArticle($id)
+{
+  include ("config.php");
+  $isValid = false;
+try
+{
+  $stmt = $dbh->prepare("DELETE FROM articles WHERE id = ?");
+  $stmt->bindParam(1, $id);
+  $stmt->execute();
+  $count = $stmt->rowCount();
+  if($count > 0)
+  {
+      $isValid = true;  
+  }
+} catch (Exception $e){
+    echo "Sentimos comunicarle pero ha habido un error, en breves estara solucionado, gracias por su paciencia.";
+    $isValid = false;
+}
+return $isValid;
 }
 
 ?>

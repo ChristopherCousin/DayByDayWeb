@@ -11,6 +11,9 @@
     <meta name="viewport" content="width=device-width" />
 
 
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css" rel="stylesheet" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+
     <!-- Bootstrap core CSS     -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
 
@@ -23,14 +26,18 @@
 		<!-- Stylesheet -->
 		<link href="assets/css/style.css" rel="stylesheet"/>
 
-
     <!--  CSS for Demo Purpose, don't include it in your project     -->
     <link href="assets/css/demo.css" rel="stylesheet" />
 
+		<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+
+		<?php include "../php/DataBaseManager.php";
+
+
+		?>
 
     <!--     Fonts and icons     -->
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
 </head>
 <body>
@@ -62,13 +69,13 @@
                     </a>
                 </li>
                 <li class="active">
-                    <a href="articles.html">
+                    <a href="articles.php">
                         <i class="pe-7s-note"></i>
                         <p>Articles</p>
                     </a>
                 </li>
 				<li class="active-pro">
-                    <a href="articles.html">
+                    <a href="articles.php">
                         <i class="pe-7s-rocket"></i>
                         <p>Control your time</p>
                     </a>
@@ -185,7 +192,7 @@
 																				  <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>
 
 																				  <div class="image-upload-wrap">
-																				    <input type='file' class="file-upload-input" name="image" onchange="readURL(this);" accept="image/*" />
+																				    <input type='file' class="file-upload-input" name="image" id="image" onchange="readURL(this);" accept="image/*" />
 																				    <div class="drag-text">
 																				      <h3>Drag and drop a file or select add Image</h3>
 																				    </div>
@@ -207,7 +214,7 @@
         </div>
         </div>
 
-				<div class="content2">
+				<div class="content2" id="content2">
 						<div class="container-fluid">
 								<div class="row">
 										<div class="col-md-9">
@@ -216,6 +223,62 @@
 																<h4 class="title">Delete Article</h4>
 														</div>
 														<div class="content2">
+															<?php
+															$articles = getArticles();
+															echo '
+																			<table class="table table-hover test1">
+																			 <thead class="thead-dark test2">
+																		    <tr>
+																				  <th>Action</th>
+																					<th>ID</th>
+																		      <th>Title</th>
+																		      <th>Description</th>
+																		    </tr>
+																				</thread>
+																			<tbody>
+																			';
+																			 for($x = 0; $x < count($articles) ; $x++)
+																			{
+																				echo '
+																					<form method="post" action="articles.php">
+																						<tr>
+																							<td><button type="submit" class="btn btn-danger" id="deleteAction" name="deleteAction">Delete</button></td>
+																							<td><input type="hidden" name="td_id" value="'.$articles[$x]->id.'">'.$articles[$x]->id.'</td>
+																							<td><input type="hidden" name="td_title" value="'.$articles[$x]->title.'">'.$articles[$x]->title.'</td>
+																							<td><input type="hidden" name="td_description" value="'.$articles[$x]->description.'">'.$articles[$x]->description.'</td>
+																						</tr>
+																					</form> ';
+																			}
+
+																			echo '</tbody>
+																						</table>';
+
+																						if(array_key_exists('deleteAction',$_POST))
+																						{
+																							if(isset($_POST["td_id"]))
+																							{
+																								 if(removeArticle($_POST["td_id"]))
+																								 {
+																										echo '<script> window.location.href="articles.php?data=succesdeletearticle"; </script>';
+																								 } else {
+																									  echo '<script> swal("Cancelled", "Error Deleting Article", "error"); </script>';
+																								 }
+																							}
+																						}
+
+
+																						if(isset($_GET["data"]))
+																								{
+																										if($_GET["data"] == "succesarticle")
+																										{
+																												echo '<script> swal("Added!", "The article has been Added!", "success"); </script>';
+																										}
+																										else if($_GET["data"] == "succesdeletearticle")
+																										{
+																												echo '<script> swal("Deleted!", "The article has been deleted!", "success"); </script>';
+																										}
+																								}
+															?>
 
 														</div>
 										</div>
@@ -263,7 +326,8 @@
 </body>
 
     <!--   Core JS Files   -->
-    <script src="assets/js/jquery.3.2.1.min.js" type="text/javascript"></script>
+  <script src="assets/js/jquery.3.2.1.min.js" type="text/javascript"></script>
+
 	<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
 
 	<!--  Charts Plugin -->
@@ -271,7 +335,6 @@
 
 
 	  <script class="jsbin" src="assets/js/main.js"></script>
-
     <!--  Notifications Plugin    -->
     <script src="assets/js/bootstrap-notify.js"></script>
 
