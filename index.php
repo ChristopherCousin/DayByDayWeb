@@ -106,6 +106,7 @@ var images = <?php echo json_encode($images); ?>;
                 </li>
                 <li>
                   <?php
+
                   if(isset($_SESSION["Login"]))
                   {
                     if(!$_SESSION["Login"])
@@ -168,23 +169,23 @@ var images = <?php echo json_encode($images); ?>;
   </nav>
   <section class="transparenteTexto">
             <div id="page1" class="contentb fadein">
-    <form action="/action_page.php" class="container">
+    <form action="" class="container">
       <label for="fname">First Name</label>
       <input type="text" id="fname" name="firstname" placeholder="Your name..">
 
       <label for="lname">Last Name</label>
       <input type="text" id="lname" name="lastname" placeholder="Your last name..">
 
-      <label for="country">Country</label>
+      <label for="country" class="containercountry">Country</label>
       <select id="country" name="country">
         <option value="australia">Australia</option>
         <option value="canada">Canada</option>
         <option value="usa">USA</option>
       </select>
 
-      <label for="subject">Subject</label>
+      <label for="subject" class="containersubject">Subject</label>
       <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-
+      <br><br>
       <input type="submit" value="Submit">
     </form>
             </div>
@@ -379,12 +380,14 @@ var images = <?php echo json_encode($images); ?>;
 
 <?php
 $articles = getArticles();
+
 echo '  <section class ="funciones-0">
       <div class="container2">
         <div class="row">
           <div class="col-md-12 funciones-0-titulo text-center">
             <h2 style="font-weight: bold">New Stuff</h2>
           </div>';
+
 for($x = 0; $x < count($articles) ; $x++)
 {
   echo '
@@ -400,7 +403,8 @@ for($x = 0; $x < count($articles) ; $x++)
               </div>
             </div>';
  }
-echo '            </div>
+
+echo '      </div>
           </div>
         </div>
       </section>';
